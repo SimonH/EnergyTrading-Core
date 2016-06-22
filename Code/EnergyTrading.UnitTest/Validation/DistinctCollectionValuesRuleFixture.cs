@@ -23,10 +23,9 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void InvalidContruction()
         {
-            new DistinctCollectionValuesRule<TestItem, string>(null, null);
+            Assert.Throws<ArgumentNullException>(() => new DistinctCollectionValuesRule<TestItem, string>(null, null));
         }
 
         [Test]

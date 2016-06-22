@@ -26,6 +26,7 @@
         /// This is a successful test case with a test file. This test might file if the test file is locked by any other process.
         /// </summary>
         [Test]
+        [Ignore("requires equivalent of MSTest DeploymentItem attribute to ensure file is in correct place or re-write so that this is irrelevant")]
         public void ReturnReaderOnSuccessfulRetryFileOpenTextIfLocked()
         {
             fileInfo.RetryFileActionIfLocked(fi =>
@@ -36,32 +37,30 @@
         }
 
         [Test]
-        [ExpectedException(typeof(IOException))]
+        [Ignore("requires equivalent of MSTest DeploymentItem attribute to ensure file is in correct place or re-write so that this is irrelevant")]
         public void RetryFileActionThrowIOExceptionWhenFileLocked()
         {
             this.fileStream = this.fileInfo.OpenWrite();
             var fileInfoAnother = new FileInfo(TestFilePath);
-            fileInfoAnother.RetryFileActionIfLocked(fi => fileInfoAnother.OpenText());
+            Assert.Throws<IOException>(() => fileInfoAnother.RetryFileActionIfLocked(fi => fileInfoAnother.OpenText()));
         }
 
         [Test]
-        [ExpectedException(typeof(FileNotFoundException))]
         public void RetryFileActionThrowFileNotFoundException()
         {
             var fileName2 = ".\\test.xml";
             var fileInfo2 = new FileInfo(fileName2);
 
-            fileInfo2.RetryFileActionIfLocked(fi =>{ var reader = fileInfo2.OpenText(); });
+            Assert.Throws<FileNotFoundException>(() => fileInfo2.RetryFileActionIfLocked(fi =>{ var reader = fileInfo2.OpenText(); }));
         }
 
         [Test]
-        [ExpectedException(typeof(IOException))]
         public void RetryFileActionThrowIOException()
         {
             var fileName2 = ".\\test.xml";         
             var fileInfo2 = new FileInfo(fileName2);
 
-            fileInfo2.RetryFileActionIfLocked(fi =>{ throw new IOException(); });
+            Assert.Throws<IOException>(() => fileInfo2.RetryFileActionIfLocked(fi =>{ throw new IOException(); }));
         }      
 
         [TearDown]

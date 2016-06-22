@@ -13,10 +13,9 @@
     public class ConfigurationConfigurationManagerTests
     {
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TestCannotConstructWithNullConfig()
         {
-            new ConfigurationConfigurationManager(null);
+            Assert.Throws<ArgumentNullException>(() => new ConfigurationConfigurationManager(null));
         }
 
         [Test]

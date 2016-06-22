@@ -19,10 +19,9 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ExceptionsAreThrownIfListIsNull()
         {
-            ExceptionExtensions.AddThrown(null, () => { throw new ArgumentOutOfRangeException(); });
+            Assert.Throws<ArgumentOutOfRangeException>(() => ExceptionExtensions.AddThrown(null, () => { throw new ArgumentOutOfRangeException(); }));
         }
 
         [Test]
@@ -36,7 +35,6 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void HandledExceptionTypesCanBeRestricted()
         {
             var handledTypes = new List<Type> { typeof(ArgumentOutOfRangeException) };
@@ -45,7 +43,7 @@
             list.AddThrown(() => { throw ex; }, handledTypes);
             Assert.AreEqual(1, list.Count);
             Assert.AreSame(ex, list[0]);
-            list.AddThrown(() => { throw new ArgumentNullException(); }, handledTypes);
+            Assert.Throws<ArgumentNullException>(() => list.AddThrown(() => { throw new ArgumentNullException(); }, handledTypes));
         }
     }
 }

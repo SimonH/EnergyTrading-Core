@@ -112,7 +112,7 @@
             return Map((dynamic)source, nodeName, xmlNamespace, outputDefault, false);
         }
 
-        /// <copydocfrom cref="IXmlMappingEngine.Map{T, D}(T, D)" />
+        /// <copydocfrom cref="IMappingEngine.Map{T, D}(T, D)" />
         public void Map<TSource, TDestination>(TSource source, TDestination destination)
         {
             Mapper<TSource, TDestination>().Map(source, destination);

@@ -48,12 +48,10 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void WhenContainerIsNull_ThrowsException()
         {
             this.container = null;
-            this.container
-                .ConfigureAutoRegistration();
+            Assert.Throws<ArgumentNullException>(() => this.container.ConfigureAutoRegistration());
         }
 
         [Test]

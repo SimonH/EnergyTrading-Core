@@ -13,11 +13,10 @@
     public class PollingContainerExtensionsFixture
     {
         [Test]
-        [ExpectedException(typeof(NotSupportedException))]
         public void RegisterPollProcessorWithInvalidEndpoint()
         {
             var container = new UnityContainer();
-            container.RegisterPollProcessor(new PollProcessorEndpoint());
+            Assert.Throws<NotSupportedException>(() => container.RegisterPollProcessor(new PollProcessorEndpoint()));
         }
 
         [Test]

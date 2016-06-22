@@ -4,7 +4,7 @@
     using System.Text;
 
     using EnergyTrading.Console;
-    using EnergyTrading.Test;
+    using Test;
 
     using NUnit.Framework;
 
@@ -12,35 +12,31 @@
     public class CommandLineParserFixture : Fixture
     {
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void IllegalSwitch()
         {
             BadSwitch config = new BadSwitch();
-            CommandLineParser parser = new CommandLineParser(string.Empty, config);
+            Assert.Throws<ArgumentOutOfRangeException>(() => new CommandLineParser(string.Empty, config));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void IllegalAlias()
         {
             BadAlias config = new BadAlias();
-            CommandLineParser parser = new CommandLineParser(string.Empty, config);
+            Assert.Throws<ArgumentOutOfRangeException>(() => new CommandLineParser(string.Empty, config));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void EmptySwitch()
         {
             StringEmptySwitch config = new StringEmptySwitch();
-            CommandLineParser parser = new CommandLineParser(string.Empty, config);
+            Assert.Throws<ArgumentNullException>(() => new CommandLineParser(string.Empty, config));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void EmptyAlias()
         {
             StringEmptyAlias config = new StringEmptyAlias();
-            CommandLineParser parser = new CommandLineParser(string.Empty, config);
+            Assert.Throws<ArgumentNullException>(() => new CommandLineParser(string.Empty, config));
         }
 
         [Test]

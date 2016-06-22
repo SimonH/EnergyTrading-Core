@@ -13,29 +13,26 @@
         private static readonly string TestData = "here is my test data, hopefully it will all get stored";
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructWithoutProcessor()
         {
-// ReSharper disable ObjectCreationAsStatement
-            new MultiPartDataProcess(null);
+            // ReSharper disable ObjectCreationAsStatement
+            Assert.Throws<ArgumentNullException>(() => new MultiPartDataProcess(null));
 // ReSharper restore ObjectCreationAsStatement
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ConstructWithZeroPartSize()
         {
-// ReSharper disable ObjectCreationAsStatement
-            new MultiPartDataProcess((x, y, z) => true, null, null, 0);
+            // ReSharper disable ObjectCreationAsStatement
+            Assert.Throws<ArgumentOutOfRangeException>(() => new MultiPartDataProcess((x, y, z) => true, null, null, 0));
 // ReSharper restore ObjectCreationAsStatement
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ConstructWithNegativePartSize()
         {
             // ReSharper disable ObjectCreationAsStatement
-            new MultiPartDataProcess((x, y, z) => true, null, null, -1);
+            Assert.Throws<ArgumentOutOfRangeException>(() => new MultiPartDataProcess((x, y, z) => true, null, null, -1));
             // ReSharper restore ObjectCreationAsStatement
         }
 

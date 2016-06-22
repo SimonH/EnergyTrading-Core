@@ -89,12 +89,11 @@
         }
 
         [Test]
-        [ExpectedException(typeof(MappingException))]
         public void UnregisteredPrefix()
         {
             var manager = this.CreateXPathManager();
 
-            manager.QualifyXPath("fred", "c"); 
+            Assert.Throws<MappingException>(() => manager.QualifyXPath("fred", "c")); 
         }
 
         protected virtual IXPathManager CreateXPathManager()

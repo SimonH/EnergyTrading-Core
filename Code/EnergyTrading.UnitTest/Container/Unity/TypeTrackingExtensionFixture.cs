@@ -23,12 +23,10 @@
         }
 
         [Test]
-        [ExpectedException(typeof(NotImplementedException))]
         public void TryResolveWithoutExtensionRegisteration()
         {
             this.container = new UnityContainer();
-            var obj = this.container.CheckConfigure<TypeTrackingExtension>().TryResolve<ITest>();
-            Assert.IsNull(obj);
+            Assert.Throws<NotImplementedException>(() => this.container.CheckConfigure<TypeTrackingExtension>().TryResolve<ITest>());
         }
 
         [Test]

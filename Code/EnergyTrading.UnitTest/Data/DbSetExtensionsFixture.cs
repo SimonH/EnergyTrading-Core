@@ -46,7 +46,6 @@ namespace EnergyTrading.UnitTest.Data
         }
 
         [Test]
-        [ExpectedException(typeof(Exception))]
         public void ShouldNotSupressAnyExceptionOtherThanMaterializedCastInvalidOperationExceptionOnFindOneRequest()
         {
             //Given
@@ -55,7 +54,7 @@ namespace EnergyTrading.UnitTest.Data
                 .Throws(new Exception("This is not materialized cast exception"));
 
             // When
-            var result = mockdbSet.Object.FindEx(1);
+            Assert.Throws<Exception>(() => mockdbSet.Object.FindEx(1));
 
             //Then
         }

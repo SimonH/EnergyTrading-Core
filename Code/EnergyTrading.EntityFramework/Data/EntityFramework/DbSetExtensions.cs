@@ -8,6 +8,9 @@
 
     using EnergyTrading.Logging;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public static class DbSetExtensions
     {
         private static readonly ILogger Logger = LoggerFactory.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);

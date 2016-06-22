@@ -47,10 +47,9 @@
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void CannotDecryptEmptyStrings()
         {
-            string.Empty.DecryptString();
+            Assert.Throws<ArgumentOutOfRangeException>(() => string.Empty.DecryptString());
         }
     }
 }

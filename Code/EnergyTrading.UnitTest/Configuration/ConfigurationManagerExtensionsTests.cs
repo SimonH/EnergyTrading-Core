@@ -22,11 +22,10 @@
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void TestGetConnectionSettingsWithPasswordThrowsIfNamedConnectionIsNotPresent()
         {
             this.mockConfigManager.Setup(x => x.ConnectionStrings).Returns(new ConnectionStringSettingsCollection());
-            this.mockConfigManager.Object.GetConnectionSettingsWithPassword("testName");
+            Assert.Throws<InvalidOperationException>(() => this.mockConfigManager.Object.GetConnectionSettingsWithPassword("testName"));
         }
 
         [Test]

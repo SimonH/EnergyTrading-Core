@@ -10,10 +10,9 @@
     public class PollingConfigurationExtensionsFixture
     {
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
         public void ToEndpointWithInvalidType()
         {
-            new PollProcessorElement { Handler = "somecrap, here", IntervalSecs = 1, Name = "name" }.ToEndpoint();
+            Assert.Throws<ArgumentException>(() => new PollProcessorElement { Handler = "somecrap, here", IntervalSecs = 1, Name = "name" }.ToEndpoint());
         }
 
         [Test]

@@ -5,7 +5,6 @@
     using System.Diagnostics;
     using System.Linq.Expressions;
 
-    using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.ContainerModel;
     using Microsoft.Practices.EnterpriseLibrary.Logging.Configuration;
     using Microsoft.Practices.EnterpriseLibrary.Logging.Formatters;
     using Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners;
@@ -163,29 +162,6 @@
         {
             get { return (double)base[EmailCacheDurationProperty]; }
             set { base[EmailCacheDurationProperty] = value; }
-        }
-
-        /// <summary>
-        /// Returns a lambda expression that represents the creation of the trace listener described by this
-        /// configuration object.
-        /// </summary>
-        /// <returns>A lambda expression to create a trace listener.</returns>
-        protected override Expression<Func<TraceListener>> GetCreationExpression()
-        {
-            return () =>
-                    new CachedEmailTraceListener(
-                        this.ToAddress,
-                        this.FromAddress,
-                        this.SubjectLineStarter,
-                        this.SubjectLineEnder,
-                        this.SmtpServer,
-                        this.SmtpPort,
-                        Container.ResolvedIfNotNull<ILogFormatter>(this.Formatter),
-                        this.AuthenticationMode,
-                        this.UserName,
-                        this.Password,
-                        this.UseSSL,
-                        this.EmailCacheDuration);
         }
     }
 }

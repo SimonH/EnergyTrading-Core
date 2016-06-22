@@ -20,28 +20,28 @@
         [Test]
         public void ShouldReportFirstMessage()
         {
-            var listener = new CachedEmailTraceListener(
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                2500,
-                null,
-                EmailAuthenticationMode.WindowsCredentials,
-                string.Empty,
-                string.Empty,
-                false,
-                1.0);
             try
             {
+                var listener = new CachedEmailTraceListener(
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    2500,
+                    null,
+                    EmailAuthenticationMode.WindowsCredentials,
+                    string.Empty,
+                    string.Empty,
+                    false,
+                    1.0);
                 listener.TraceData(null, string.Empty, TraceEventType.Error, 1, new LogEntry());
                 // If no exception
                 Assert.Fail();
             }
             catch(ArgumentException ex)
             {
-                Assert.AreEqual("The parameter 'address' cannot be an empty string.\r\nParameter name: address", ex.Message);
+                Assert.AreEqual("The argument cannot be empty.\r\nParameter name: toAddress", ex.Message);
             }
             catch
             {
@@ -52,85 +52,63 @@
         [Test]
         public void ShouldCacheTheMessagesBasedOnCacheInterval()
         {
-            var listener = new CachedEmailTraceListener(
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                2500,
-                null,
-                EmailAuthenticationMode.WindowsCredentials,
-                string.Empty,
-                string.Empty,
-                false,
-                1.0); // 1 hour cache time
-
-            var logEntry = new LogEntry { Message = "ABC Error", Severity = TraceEventType.Error};
             try
             {
+                var listener = new CachedEmailTraceListener(
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    2500,
+                    null,
+                    EmailAuthenticationMode.WindowsCredentials,
+                    string.Empty,
+                    string.Empty,
+                    false,
+                    1.0); // 1 hour cache time
+
+                var logEntry = new LogEntry { Message = "ABC Error", Severity = TraceEventType.Error };
                 listener.TraceData(null, string.Empty, TraceEventType.Error, 1, logEntry);
                 // If no exception
                 Assert.Fail();
             }
             catch (ArgumentException ex)
             {
-                Assert.AreEqual("The parameter 'address' cannot be an empty string.\r\nParameter name: address", ex.Message);
+                Assert.AreEqual("The argument cannot be empty.\r\nParameter name: toAddress", ex.Message);
             }
             catch
             {
                 Assert.Fail();
             }
-
-            //Second call should not hit the base TraceData call..
-            listener.TraceData(null, string.Empty, TraceEventType.Error, 1, logEntry);
         }
 
         [Test]
         public void ShouldSendEmailIfCacheIsExpiredAfterSpecifiedIntervel()
         {
-            var listener = new CachedEmailTraceListener(
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                2500,
-                null,
-                EmailAuthenticationMode.WindowsCredentials,
-                string.Empty,
-                string.Empty,
-                false,
-                1.0/3600); // 1 sec cache time
-
             var logEntry = new LogEntry() { Message = "ABC Error", Severity = TraceEventType.Error };
             try
             {
+                var listener = new CachedEmailTraceListener(
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    2500,
+                    null,
+                    EmailAuthenticationMode.WindowsCredentials,
+                    string.Empty,
+                    string.Empty,
+                    false,
+                    1.0 / 3600); // 1 sec cache time
                 listener.TraceData(null, string.Empty, TraceEventType.Error, 1, logEntry);
                 // If no exception
                 Assert.Fail();
             }
             catch (ArgumentException ex)
             {
-                Assert.AreEqual("The parameter 'address' cannot be an empty string.\r\nParameter name: address", ex.Message);
-            }
-            catch
-            {
-                Assert.Fail();
-            }
-
-            Thread.Sleep(1200); // 1200 millis seconds, just over the second
-
-            //Second call should send email..
-            try
-            {
-                listener.TraceData(null, string.Empty, TraceEventType.Error, 1, logEntry);
-                // If no exception
-                Assert.Fail();
-            }
-            catch (ArgumentException ex)
-            {
-                Assert.AreEqual("The parameter 'address' cannot be an empty string.\r\nParameter name: address", ex.Message);
+                Assert.AreEqual("The argument cannot be empty.\r\nParameter name: toAddress", ex.Message);
             }
             catch
             {

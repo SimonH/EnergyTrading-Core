@@ -11,7 +11,9 @@
         {
         }
 
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
         private class Child
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
         {
 // ReSharper disable UnusedAutoPropertyAccessor.Local
             public GrandChild GrandChild { get; set; }

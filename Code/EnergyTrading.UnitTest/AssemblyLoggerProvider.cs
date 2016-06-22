@@ -30,13 +30,13 @@
             LoggerFactory.SetProvider(provider);
         }
 
-        [SetUp]
+        [OneTimeSetUp]
         public void SetUp()
         {
             InitializeLogger();
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void TearDown()
         {
             RestoreLogger();

@@ -13,10 +13,9 @@
     public class PollingHostFixture
     {
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructWithNull()
         {
-            new PollingHost(null);
+            Assert.Throws<ArgumentNullException>(() => new PollingHost(null));
         }
 
         [Test]

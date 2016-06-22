@@ -12,6 +12,10 @@
     public class NullDatabaseInitializer<TContext> : IDatabaseInitializer<TContext>
         where TContext : DbContext 
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public void InitializeDatabase(TContext context)
         {
         }

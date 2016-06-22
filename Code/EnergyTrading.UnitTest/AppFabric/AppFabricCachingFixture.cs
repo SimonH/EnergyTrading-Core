@@ -52,8 +52,8 @@ namespace EnergyTrading.UnitTest.AppFabric
         }
 
         [Test]
-        [TestCase("", "net.tcp://localhost:22233", ExpectedException = typeof(ConfigurationErrorsException))]
-        [TestCase("", "", ExpectedException = typeof(ConfigurationErrorsException))]
+        [TestCase("", "net.tcp://localhost:22233")]
+        [TestCase("", "")]
         public void ShouldThrowErrorIfAppFabricSettingsAreMissing(string cacheName, string uri)
         {
             container = new UnityContainer();
@@ -62,7 +62,7 @@ namespace EnergyTrading.UnitTest.AppFabric
             appSettings["AppFabricUri"] = uri;
             var configManager = new Mock<IConfigurationManager>();
             configManager.Setup(x => x.AppSettings).Returns(appSettings);
-            AppFabricCacheRegistrar.Register(container, configManager.Object);
+            Assert.Throws<ConfigurationErrorsException>(() => AppFabricCacheRegistrar.Register(container, configManager.Object));
         }
 
         [Test]
@@ -78,7 +78,7 @@ namespace EnergyTrading.UnitTest.AppFabric
             container.Resolve<ICacheRepository>();
         }
 
-        [Ignore]
+        [Ignore("override of base test that we don't want to run")]
         public override void ShouldReturnSameCacheInstanceForSameCacheNames()
         {
 

@@ -14,7 +14,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    [Ignore]
+    [Ignore("reason added when upgrading to nunit 3.x")]
     public class RegionedAppFabricSearchCacheTests
     {
         private static DataCache cache;
@@ -22,7 +22,7 @@
         private const string CacheName = "EnergyTradingCoreTesting";
         private const string RegionName = "RegionedAppFabricSearchCacheTestsRegion";
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public static void TestSetUp()
         {
             var config = new DataCacheFactoryConfiguration
@@ -37,7 +37,7 @@
             cache = factory.GetCache(CacheName);
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void TestCleanUp()
         {
             cache.RemoveRegion(RegionName);

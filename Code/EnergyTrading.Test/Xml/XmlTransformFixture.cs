@@ -389,6 +389,8 @@
         /// Validate XML against a schema.
         /// </summary>
         /// <param name="xml"></param>
+        /// <param name="schema"></param>
+        /// <param name="version"></param>
         protected virtual void SchemaValidate(string xml, string schema, string version)
         {
             var validator = Container.Resolve<IXmlSchemaValidator>();

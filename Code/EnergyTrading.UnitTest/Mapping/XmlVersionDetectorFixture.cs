@@ -152,7 +152,6 @@
         }
 
         [Test]
-        [ExpectedException(typeof(NotSupportedException))]
         public void DetectorResponseToInvalidXml()
         {
             // Arrange
@@ -160,10 +159,8 @@
             var detector = new XmlVersionDetector(new[] { d1.Object });
 
             // Act
-            var candidate = detector.DetectSchemaVersion("<test>");
+            Assert.Throws<NotSupportedException>(() => detector.DetectSchemaVersion("<test>"));
 
-            // Assert
-            Assert.AreEqual(string.Empty, candidate);
         }
 
         [Test]

@@ -11,17 +11,15 @@
     public class PollProcessorFixture
     {
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructWithNullEndpoint()
         {
-            new PollProcessor(null, new PollerImpl());
+            Assert.Throws<ArgumentNullException>(() => new PollProcessor(null, new PollerImpl()));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ConstructWithNullPoller()
         {
-            new PollProcessor(new PollProcessorEndpoint { Name = "name", IntervalSecs = 1, Handler = typeof(PollerImpl) }, null);
+            Assert.Throws<ArgumentNullException>(() => new PollProcessor(new PollProcessorEndpoint { Name = "name", IntervalSecs = 1, Handler = typeof(PollerImpl) }, null));
         }
 
         [Test]

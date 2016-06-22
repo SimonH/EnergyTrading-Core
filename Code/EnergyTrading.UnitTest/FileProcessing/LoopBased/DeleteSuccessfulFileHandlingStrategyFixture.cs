@@ -9,7 +9,7 @@ namespace EnergyTrading.UnitTest.FileProcessing.LoopBased
     [TestFixture]
     public class DeleteSuccessfulFileHandlingStrategyFixture
     {
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public static void CreateTestDirectory()
         {
             RemoveDirectory();
@@ -25,7 +25,7 @@ namespace EnergyTrading.UnitTest.FileProcessing.LoopBased
             }
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public static void RemoveDirectory()
         {
             if (Directory.Exists(testDirectory))

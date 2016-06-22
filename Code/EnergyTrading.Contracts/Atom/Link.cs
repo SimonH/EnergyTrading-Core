@@ -32,8 +32,8 @@
         /// element MUST be interpreted as if the link relation type is
         /// "alternate".
         /// </para>
+        /// http://www.iana.org/assignments/link-relations/link-relations.xml
         /// </summary>
-        /// <seealso cref="http://www.iana.org/assignments/link-relations/link-relations.xml"/>
         [DataMember(Name = "rel")]
         [XmlAttribute("rel")]
         public string Rel { get; set; }

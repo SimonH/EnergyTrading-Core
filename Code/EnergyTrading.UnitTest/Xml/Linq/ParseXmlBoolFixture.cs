@@ -70,10 +70,9 @@
         }
 
         [Test]
-        [ExpectedException(typeof(FormatException))]
         public void ParseBool()
         {
-            this.Parse("test", false);
+            Assert.Throws<FormatException>(() => this.Parse("test", false));
         }
 
         private void Parse(string value, bool expected)

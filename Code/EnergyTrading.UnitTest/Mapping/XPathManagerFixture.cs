@@ -86,12 +86,11 @@
         }
 
         [Test]
-        [ExpectedException(typeof(MappingException))]
         public void UnregisteredNamespace()
         {
             var manager = this.CreateXPathManager();
 
-            manager.QualifyXPath("fred", null, "http://www.c.com");
+            Assert.Throws<MappingException>(() => manager.QualifyXPath("fred", null, "http://www.c.com"));
         }
 
         protected virtual IXPathManager CreateXPathManager()

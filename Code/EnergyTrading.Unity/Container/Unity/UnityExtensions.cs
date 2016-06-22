@@ -79,9 +79,6 @@
         /// Standard set of extensions for child containers.
         /// <para>
         /// Currently
-#pragma warning disable 612,618
-        /// <see cref="UnityDefaultBehaviorExtension" />, <see cref="InjectedMembers" />
-#pragma warning restore 612,618
         /// and <see cref="TypeTrackingExtension" />
         /// </para>
         /// </summary>
@@ -90,10 +87,6 @@
         {
             return new List<UnityContainerExtension>
             {
-                new UnityDefaultBehaviorExtension(),
-#pragma warning disable 612,618 // Marked as obsolete, but Unity still uses it internally.
-                new InjectedMembers(),
-#pragma warning restore 612,618
                 new TypeTrackingExtension()
             };
         }
@@ -102,10 +95,7 @@
         /// Standard set of extensions for containers.
         /// <para>
         /// Currently
-#pragma warning disable 612,618
-        /// <see cref="UnityDefaultBehaviorExtension" />, <see cref="InjectedMembers" />
-#pragma warning restore 612,618
-        /// <see cref="UnityDefaultStrategiesExtension"/> and <see cref="TypeTrackingExtension" />
+        /// <see cref="TypeTrackingExtension" />
         /// </para>
         /// </summary>
         /// <returns>Enumeration of the default extensions</returns>
@@ -113,11 +103,6 @@
         {
             return new List<UnityContainerExtension>
             {
-                new UnityDefaultBehaviorExtension(),
-#pragma warning disable 612,618 // Marked as obsolete, but Unity still uses it internally.
-                new InjectedMembers(),
-#pragma warning restore 612,618
-                new UnityDefaultStrategiesExtension(),
                 new TypeTrackingExtension()
             };
         }
@@ -319,7 +304,6 @@
                 return;
             }
 
-            container.RemoveAllExtensions();
             container.AddExtension(new InitialisedExtension());
             container.InstallExtensions(container.Parent == null ? CoreExtensions() : ChildCoreExtensions());
         }

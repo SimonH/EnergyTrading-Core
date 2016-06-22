@@ -540,7 +540,6 @@
         }
 
         [Test]
-        [ExpectedException(typeof(FormatException))]
         public void ToDecimalFailsForWrongFormat()
         {
             const string TestXml = @"<Fred xmlns='http://sample.com'>
@@ -550,7 +549,7 @@
 
             processor.RegisterNamespace("sample", "http://sample.com");
             processor.Push("Fred", "http://sample.com");
-            processor.ToDecimal("Bob");
+            Assert.Throws<FormatException>(() => processor.ToDecimal("Bob"));
         }
 
         [Test]
@@ -612,7 +611,6 @@
         }
 
         [Test]
-        [ExpectedException(typeof(FormatException))]
         public void ToFloatFailsForWrongFormat()
         {
             const string TestXml = @"<Fred xmlns='http://sample.com'>
@@ -622,7 +620,7 @@
 
             processor.RegisterNamespace("sample", "http://sample.com");
             processor.Push("Fred", "http://sample.com");
-            processor.ToFloat("Bob");
+            Assert.Throws<FormatException>(() => processor.ToFloat("Bob"));
         }
 
         [Test]
@@ -685,7 +683,6 @@
         }
 
         [Test]
-        [ExpectedException(typeof(FormatException))]
         public void ToDoubleFailsForWrongFormat()
         {
             const string TestXml = @"<Fred xmlns='http://sample.com'>
@@ -695,7 +692,7 @@
 
             processor.RegisterNamespace("sample", "http://sample.com");
             processor.Push("Fred", "http://sample.com");
-            processor.ToDouble("Bob");
+            Assert.Throws<FormatException>(() => processor.ToDouble("Bob"));
         }
 
         [Test]

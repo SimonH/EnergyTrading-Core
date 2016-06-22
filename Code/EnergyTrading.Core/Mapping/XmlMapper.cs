@@ -37,8 +37,8 @@
         /// Gets or sets whether attributes use the default namespace.
         /// </summary>
         protected bool AttributeDefaultNamespace { get; set; }
-        
-        /// <copydocfrom cref="IXmlMapper{T, XElement}.Map(T)" />
+
+        /// <copydocfrom cref="IMapper{TEntity, XElement}.Map(TEntity)" />
         public XElement Map(TEntity source)
         {
             return this.Map(source, this.NodeName);
