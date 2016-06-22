@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>EnergyTrading.SimpleData.Oracle</id>
-        <title>EnergyTrading.SimpleData.Oracle</title>
+        <id>SH.EnergyTrading.SimpleData.Oracle</id>
+        <title>SH.EnergyTrading.SimpleData.Oracle</title>
         <description>Common functionality for use with SimpleData over Oracle</description>
-        <version>$version$</version>
+        <version>1.0.0</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
-        <owners>RWEST</owners>
-        <authors>RWEST Architecture Team</authors>
-        <projectUrl>https://github.com/RWE-Nexus/EnergyTrading-Core</projectUrl>
+        <owners>SimonH</owners>
+        <authors>SimonHST Architecture Team</authors>
+        <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading logging data SimpleData .net40</tags>
         <dependencies>
             <group>

@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>EnergyTrading.EntityFramework</id>
-        <title>EnergyTrading.EntityFramework</title>
+        <id>SH.EnergyTrading.EntityFramework</id>
+        <title>SH.EnergyTrading.EntityFramework</title>
         <description>EnergyTrading helpers and extensions for Entity Framework.</description>
-        <version>$version$</version>
+        <version>1.0.0</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
-        <authors>RWE</authors>
-        <owners>Integration Architecture</owners>
-        <projectUrl>https://github.com/RWE-Nexus/EnergyTrading-Core</projectUrl>
+        <authors>SimonH</authors>
+        <owners>SimonH</owners>
+        <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading EntityFramework .net40</tags>
         <dependencies>
-            <dependency id="EnergyTrading.Core" version="" />
-            <dependency id="EntityFramework" version="" />
+            <dependency id="EnergyTrading.Core" />
+            <dependency id="EntityFramework" />
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>

@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>EnergyTrading.Core</id>
-        <title>EnergyTrading.Core</title>
+        <id>SH.EnergyTrading.Core</id>
+        <title>SH.EnergyTrading.Core</title>
         <description>The general EnergyTrading .NET common library</description>
-        <version>$version$</version>
+        <version>1.0.0</version>
         <releaseNotes></releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
-        <owners>RWEST</owners>
-        <authors>RWEST Architecture Team</authors>
-        <projectUrl>https://github.com/RWE-Nexus/EnergyTrading-Core</projectUrl>
+        <owners>SimonH</owners>
+        <authors>SimonHST Architecture Team</authors>
+        <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading logging data mapping validation xml .net40</tags>        
         <dependencies>
             <group>
-                <dependency id="CommonServiceLocator" version="" />
-                <dependency id="EnergyTrading.Contracts" version="" />
+                <dependency id="CommonServiceLocator" />
+                <dependency id="EnergyTrading.Contracts" />
             </group>
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>

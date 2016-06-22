@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>EnergyTrading.Logging.Log4Net</id>
-        <title>EnergyTrading.Logging.Log4Net</title>
+        <id>SH.EnergyTrading.Logging.Log4Net</id>
+        <title>SH.EnergyTrading.Logging.Log4Net</title>
         <description>Log4Net implementation of the EnergyTrading logging library</description>
-        <version>$version$</version>
+        <version>1.0.0</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
-        <authors>RWE</authors>
-        <owners>Integration Architecture</owners>
-        <projectUrl>https://github.com/RWE-Nexus/EnergyTrading-Core</projectUrl>
+        <authors>SimonH</authors>
+        <owners>SimonH</owners>
+        <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading logging log4net .net40</tags>
         <dependencies>
             <dependency id="log4net" />
