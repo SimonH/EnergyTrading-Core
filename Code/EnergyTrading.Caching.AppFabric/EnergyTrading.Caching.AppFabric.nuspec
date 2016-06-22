@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>EnergyTrading.Caching.AppFabric</id>
+        <id>SH.EnergyTrading.Caching.AppFabric</id>
         <title>SH.EnergyTrading.Caching.AppFabric</title>        
         <description>EnergyTrading distributed cache support classes specifically for AppFabric</description>
         <version>1.0.0</version>
@@ -18,6 +18,6 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.Caching.AppFabric\bin\Release\EnergyTrading.Caching.AppFabric.*" target="lib\net40" />
+        <file src="EnergyTrading.Caching.AppFabric\bin\Release\EnergyTrading.Caching.AppFabric.*" target="lib\net40" />
     </files>
 </package>

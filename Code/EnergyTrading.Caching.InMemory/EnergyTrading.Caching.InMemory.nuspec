@@ -18,6 +18,6 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.Caching.InMemory\bin\Release\EnergyTrading.Caching.InMemory.*" target="lib\net40" />
+        <file src="EnergyTrading.Caching.InMemory\bin\Release\EnergyTrading.Caching.InMemory.*" target="lib\net40" />
     </files>
 </package>

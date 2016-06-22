@@ -23,8 +23,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.SimpleData\bin\Release\EnergyTrading.SimpleData.dll" target="lib\net40" />
-        <file src="Code\EnergyTrading.SimpleData\bin\Release\EnergyTrading.SimpleData.pdb" target="lib\net40" />
-        <file src="Code\EnergyTrading.SimpleData\bin\Release\EnergyTrading.SimpleData.xml" target="lib\net40" />
+        <file src="EnergyTrading.SimpleData\bin\Release\EnergyTrading.SimpleData.dll" target="lib\net40" />
+        <file src="EnergyTrading.SimpleData\bin\Release\EnergyTrading.SimpleData.pdb" target="lib\net40" />
+        <file src="EnergyTrading.SimpleData\bin\Release\EnergyTrading.SimpleData.xml" target="lib\net40" />
      </files>
 </package>

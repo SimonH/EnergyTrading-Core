@@ -66,6 +66,7 @@
     <Compile Include="Search\SearchOptions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EnergyTrading.Contracts.nuspec" />
     <None Include="packages.config" />
     <None Include="Search\Search.cd" />
   </ItemGroup>

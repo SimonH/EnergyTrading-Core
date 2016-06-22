@@ -24,8 +24,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.Test\bin\Release\EnergyTrading.Test.dll" target="lib\net40" />
-        <file src="Code\EnergyTrading.Test\bin\Release\EnergyTrading.Test.pdb" target="lib\net40" />
-        <file src="Code\EnergyTrading.Test\bin\Release\EnergyTrading.Test.xml" target="lib\net40" />
+        <file src="EnergyTrading.Test\bin\Release\EnergyTrading.Test.dll" target="lib\net40" />
+        <file src="EnergyTrading.Test\bin\Release\EnergyTrading.Test.pdb" target="lib\net40" />
+        <file src="EnergyTrading.Test\bin\Release\EnergyTrading.Test.xml" target="lib\net40" />
     </files>
 </package>

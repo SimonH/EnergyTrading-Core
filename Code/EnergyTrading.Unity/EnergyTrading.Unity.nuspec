@@ -19,6 +19,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
   <files>
-    <file src="Code\EnergyTrading.Unity\bin\Release\EnergyTrading.Unity.*" target="lib\net40" />
+    <file src="EnergyTrading.Unity\bin\Release\EnergyTrading.Unity.*" target="lib\net40" />
   </files>
 </package>

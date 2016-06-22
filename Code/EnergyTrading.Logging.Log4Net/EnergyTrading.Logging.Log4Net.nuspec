@@ -17,8 +17,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.Logging.Log4Net\bin\Release\EnergyTrading.Logging.Log4Net.dll" target="lib\net40" />
-        <file src="Code\EnergyTrading.Logging.Log4Net\bin\Release\EnergyTrading.Logging.Log4Net.pdb" target="lib\net40" />
-        <file src="Code\EnergyTrading.Logging.Log4Net\bin\Release\EnergyTrading.Logging.Log4Net.xml" target="lib\net40" />
+        <file src="EnergyTrading.Logging.Log4Net\bin\Release\EnergyTrading.Logging.Log4Net.dll" target="lib\net40" />
+        <file src="EnergyTrading.Logging.Log4Net\bin\Release\EnergyTrading.Logging.Log4Net.pdb" target="lib\net40" />
+        <file src="EnergyTrading.Logging.Log4Net\bin\Release\EnergyTrading.Logging.Log4Net.xml" target="lib\net40" />
     </files>
 </package>

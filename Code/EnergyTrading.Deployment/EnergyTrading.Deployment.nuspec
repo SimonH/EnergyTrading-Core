@@ -21,6 +21,6 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.Deployment\bin\Release\EnergyTrading.Deployment.*" target="lib\net40" />
+        <file src="EnergyTrading.Deployment\bin\Release\EnergyTrading.Deployment.*" target="lib\net40" />
     </files>
 </package>

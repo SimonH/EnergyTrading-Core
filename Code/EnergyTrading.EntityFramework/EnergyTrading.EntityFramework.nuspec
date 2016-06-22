@@ -18,6 +18,6 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.EntityFramework\bin\Release\EnergyTrading.EntityFramework.*" target="lib\net40" />
+        <file src="EnergyTrading.EntityFramework\bin\Release\EnergyTrading.EntityFramework.*" target="lib\net40" />
     </files>
 </package>

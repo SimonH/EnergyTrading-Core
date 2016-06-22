@@ -20,7 +20,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="Code\EnergyTrading.SimpleData.Oracle\bin\Release\EnergyTrading.SimpleData.Oracle.dll" target="lib\net40" />
-        <file src="Code\EnergyTrading.SimpleData.Oracle\bin\Release\EnergyTrading.SimpleData.Oracle.pdb" target="lib\net40" />
+        <file src="EnergyTrading.SimpleData.Oracle\bin\Release\EnergyTrading.SimpleData.Oracle.dll" target="lib\net40" />
+        <file src="EnergyTrading.SimpleData.Oracle\bin\Release\EnergyTrading.SimpleData.Oracle.pdb" target="lib\net40" />
      </files>
 </package>

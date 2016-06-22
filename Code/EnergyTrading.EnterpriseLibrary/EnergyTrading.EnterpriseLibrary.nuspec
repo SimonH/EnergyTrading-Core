@@ -20,6 +20,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
   <files>
-    <file src="Code\EnergyTrading.EnterpriseLibrary\bin\Release\EnergyTrading.EnterpriseLibrary.*" target="lib\net40" />
+    <file src="EnergyTrading.EnterpriseLibrary\bin\Release\EnergyTrading.EnterpriseLibrary.*" target="lib\net40" />
   </files>
 </package>
