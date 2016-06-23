@@ -12,7 +12,7 @@
         <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading EntityFramework .net40</tags>
         <dependencies>
-            <dependency id="EnergyTrading.Core" />
+            <dependency id="SH.EnergyTrading.Core" />
             <dependency id="EntityFramework" />
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>

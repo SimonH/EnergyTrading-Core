@@ -12,7 +12,8 @@
         <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading logging log4net .net40</tags>
         <dependencies>
-            <dependency id="log4net" />
+          <dependency id="SH.EnergyTrading.Core" />
+          <dependency id="log4net" />
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>

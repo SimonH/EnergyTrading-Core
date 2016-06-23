@@ -12,8 +12,8 @@
         <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading Inmemory Cache .net40</tags>
         <dependencies>
-            <dependency id="EnergyTrading.Unity" />
-            <dependency id="EnergyTrading.Core" />
+            <dependency id="SH.EnergyTrading.Unity" />
+            <dependency id="SH.EnergyTrading.Core" />
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>

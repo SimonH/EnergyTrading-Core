@@ -14,8 +14,8 @@
         <dependencies>
             <group>
                 <dependency id="CommonServiceLocator" version="[1.0, 2.0)" />
-                <dependency id="EnergyTrading.Contracts" />
-                <dependency id="EnergyTrading.Core" />
+                <dependency id="SH.EnergyTrading.Contracts" />
+                <dependency id="SH.EnergyTrading.Core" />
                 <dependency id="Simple.Data.Core" version="[0.18.3.1]" />
                 <dependency id="Simple.Data.Ado" version="[0.18.3.1]" />
             </group>

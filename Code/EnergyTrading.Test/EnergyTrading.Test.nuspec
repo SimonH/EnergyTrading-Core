@@ -14,9 +14,9 @@
         <dependencies>
             <dependency id="CommonServiceLocator" />
             <dependency id="Moq" version="[4.0, 5.0)" />
-            <dependency id="EnergyTrading.Contracts" />
-            <dependency id="EnergyTrading.Core" />
-            <dependency id="EnergyTrading.Unity" />
+            <dependency id="SH.EnergyTrading.Contracts" />
+            <dependency id="SH.EnergyTrading.Core" />
+            <dependency id="SH.EnergyTrading.Unity" />
             <dependency id="XmlDiffPatch" />
             <dependency id="NCheck" />            
           <dependency id="NUnit" />

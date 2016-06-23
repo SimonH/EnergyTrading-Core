@@ -13,7 +13,7 @@
     <tags>EnergyTrading IoC Unity .net40</tags>
     <dependencies>
       <dependency id="CommonServiceLocator" />
-      <dependency id="EnergyTrading.Core" />
+      <dependency id="SH.EnergyTrading.Core" />
       <dependency id="Unity" />
     </dependencies>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

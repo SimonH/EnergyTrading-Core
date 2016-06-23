@@ -15,7 +15,7 @@
       <dependency id="CommonServiceLocator" />
       <dependency id="EnterpriseLibrary.Common" />
       <dependency id="EnterpriseLibrary.Logging" />
-      <dependency id="EnergyTrading.Core" />
+      <dependency id="SH.EnergyTrading.Core" />
     </dependencies>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>

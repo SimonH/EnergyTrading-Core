@@ -13,7 +13,7 @@
         <tags>EnergyTrading AppFabric Cache .net40</tags>
         <dependencies>
             <dependency id="ServerAppFabric.Client" />
-            <dependency id="EnergyTrading.Core" />
+            <dependency id="SH.EnergyTrading.Core" />
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>

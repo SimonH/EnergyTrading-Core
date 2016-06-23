@@ -14,7 +14,7 @@
         <dependencies>
             <group>
                 <dependency id="CommonServiceLocator" />
-                <dependency id="EnergyTrading.Contracts" />
+                <dependency id="SH.EnergyTrading.Contracts" />
             </group>
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
