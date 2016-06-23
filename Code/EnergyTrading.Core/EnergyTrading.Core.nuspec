@@ -8,7 +8,7 @@
         <releaseNotes></releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <owners>SimonH</owners>
-        <authors>SimonHST Architecture Team</authors>
+        <authors>SimonH</authors>
         <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
         <tags>EnergyTrading logging data mapping validation xml .net40</tags>        
         <dependencies>
