@@ -294,6 +294,7 @@
     <Compile Include="Registrars\Maps\Common\V1\AnimalAnimalModelMapper.cs" />
     <Compile Include="Registrars\Maps\Common\V1\ChildChildModelMapper.cs" />
     <Compile Include="Registrars\Maps\Common\V2.1\AnimalAnimalModelMapper.cs" />
+    <Compile Include="Registrars\Maps\Common\V2.1\NamedAnimalXmlMapper.cs" />
     <Compile Include="Registrars\Maps\Common\V2\AnimalAnimalModelMapper.cs" />
     <Compile Include="Registrars\Maps\OwnerEntityMapper.cs" />
     <Compile Include="Registrars\Maps\OwnerXmlMapper.cs" />

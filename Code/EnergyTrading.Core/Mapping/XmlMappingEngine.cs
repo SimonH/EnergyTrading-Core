@@ -91,6 +91,11 @@
             return Mapper<TSource, TDestination>().Map(source);
         }
 
+        public TDestination KeyedMap<TSource, TDestination>(string key, TSource source)
+        {
+            return Mapper<TSource, TDestination>(key).Map(source);
+        }
+
         /// <copydocfrom cref="IMappingEngine.Map{T,S}(IEnumerable{T})" />
         public IEnumerable<TDestination> Map<TSource, TDestination>(IEnumerable<TSource> source)
         {
@@ -116,6 +121,11 @@
         public void Map<TSource, TDestination>(TSource source, TDestination destination)
         {
             Mapper<TSource, TDestination>().Map(source, destination);
+        }
+
+        public void KeyedMap<TSource, TDestination>(string key, TSource source, TDestination destination)
+        {
+            Mapper<TSource, TDestination>(key).Map(source, destination);
         }
 
         /// <copydocfrom cref="IXmlMappingEngine.Map{T, D}(T, string, string, string, string, int)" />

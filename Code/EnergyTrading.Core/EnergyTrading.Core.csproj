@@ -92,6 +92,7 @@
     <Compile Include="Console\ConsoleUtils.cs" />
     <Compile Include="Container\IServiceLocatorOwner.cs" />
     <Compile Include="Container\ServiceLocatorExtensions.cs" />
+    <Compile Include="Conversion\IConvertTo.cs" />
     <Compile Include="CoreConstants.cs" />
     <Compile Include="Crypto\CryptoStringExtensions.cs" />
     <Compile Include="Data\InvalidColumnException.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Mapping\LinqExtensions.cs" />
     <Compile Include="Mapping\LocatorXmlMapperFactory.cs" />
     <Compile Include="Mapping\MappingExtensions.cs" />
+    <Compile Include="Mapping\NamedMapperAttribute.cs" />
     <Compile Include="Mapping\NullXmlMappingEngine.cs" />
     <Compile Include="Mapping\SchemaVersion.cs" />
     <Compile Include="Mapping\SchemaVersionExtensions.cs" />
@@ -199,6 +201,7 @@
     <Compile Include="ProducerConsumer\ProducerConsumerQueueBase.cs" />
     <Compile Include="ProducerConsumer\WorkItem.cs" />
     <Compile Include="Search\SearchExtensions.cs" />
+    <Compile Include="serialization\ITextSerializer.cs" />
     <Compile Include="ServiceModel\Channels\ChannelsExtensions.cs" />
     <Compile Include="ServiceModel\Channels\ClientMessageLogger.cs" />
     <Compile Include="ServiceModel\Channels\ClientMessageLoggerBehavior.cs" />

@@ -168,6 +168,13 @@
         }
 
         /// <inheritdoc />
+        public override DateTime ToUniversalDateTime(string xpath, string prefix = "", bool isAttribute = false)
+        {
+            return (isAttribute ? AttributeToValue(xpath, x => (DateTime)x, prefix)
+                               : ToValue(xpath, x => (DateTime)x, prefix)).ToUniversalTime();
+        }
+
+        /// <inheritdoc />
         public override DateTimeOffset ToDateTimeOffset(string xpath, string prefix = "", bool isAttribute = false)
         {
             return isAttribute ? AttributeToValue(xpath, x => (DateTimeOffset) x, prefix)

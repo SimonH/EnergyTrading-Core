@@ -430,6 +430,18 @@
         }
 
         /// <summary>
+        /// Evaluate a node as a DateTime in UTC.
+        /// </summary>
+        /// <param name="xpath">XPath relative to CurrentNode</param>
+        /// <param name="prefix">Prefix to use, must provide to evaluate qualified attributes</param>
+        /// <param name="isAttribute">Whether the node is an attribute or an element.</param>        
+        /// <returns>Value of the node.</returns>
+        public virtual DateTime ToUniversalDateTime(string xpath, string prefix = "", bool isAttribute = false)
+        {
+            return ToValue(xpath, x => x.Current.ValueAsDateTime, prefix, isAttribute).ToUniversalTime();
+        }
+
+        /// <summary>
         /// Evaluate a node as a <see cref="DateTimeOffset" />.
         /// </summary>
         /// <param name="xpath">XPath relative to CurrentNode</param>

@@ -376,5 +376,15 @@
 
             return type.MakeGenericType(args);
         }
+
+        public static bool IsBasicType(this object source)
+        {
+            return source != null && source.GetType().IsBasicType();
+        }
+
+        public static bool IsBasicType(this Type type)
+        {
+            return type.IsPrimitive || type == typeof(decimal) || type == typeof(string) || type == typeof(object) || type == typeof(DateTime) || type == typeof(DateTimeOffset);
+        }
     }
 }

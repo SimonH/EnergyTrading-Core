@@ -79,6 +79,7 @@
             engine.ResolveMapper<XPathProcessor, Entity, EntityXmlMapper>();
             engine.ResolveMapper<XPathProcessor, Animal, Maps.Common.V2_1.AnimalXmlMapper>();
             engine.ResolveMapper<XPathProcessor, Child, ChildXmlMapper>();
+            engine.ResolveMapper<XPathProcessor, Animal, Maps.Common.V2_1.NamedAnimalXmlMapper>("MapperName");
         }
 
         [Test]

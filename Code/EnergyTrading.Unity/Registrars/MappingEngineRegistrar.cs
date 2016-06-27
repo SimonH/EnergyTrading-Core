@@ -1,4 +1,6 @@
-﻿namespace EnergyTrading.Registrars
+﻿using System.Linq;
+
+namespace EnergyTrading.Registrars
 {
     using System;
     using System.Collections.Generic;
@@ -165,9 +167,19 @@
         private void AutoAreaRegisterMappers(IUnityContainer versioned, string area, double version)
         {
             versioned.ConfigureAutoRegistration()
+                    .Include(
+                        x => x.ImplementsOpenGeneric(MapperType) && IsVersionedMapper(x, area, version),
+                        Then.Register().AsAllInterfacesOfType())
+                    .Exclude(x => x.GetCustomAttributes(typeof(NamedMapperAttribute), false).FirstOrDefault() != null)
+                    .ApplyAutoRegistration(GetType().Assembly);
+            versioned.ConfigureAutoRegistration()
                      .Include(
-                         x => x.ImplementsOpenGeneric(MapperType) && IsVersionedMapper(x, area, version),
-                         Then.Register().AsAllInterfacesOfType())
+                         x => x.ImplementsOpenGeneric(MapperType) && IsVersionedMapper(x, area, version) && x.GetCustomAttributes(typeof(NamedMapperAttribute), false).FirstOrDefault() != null,
+                         Then.Register().AsAllInterfacesOfType().WithName(t =>
+                         {
+                             var att = t.GetCustomAttributes(typeof(NamedMapperAttribute), false).First();
+                             return ((NamedMapperAttribute)att).Name;
+                         }))
                      .ApplyAutoRegistration(GetType().Assembly);
         }
     }

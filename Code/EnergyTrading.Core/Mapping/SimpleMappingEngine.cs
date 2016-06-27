@@ -76,6 +76,23 @@
             this.mappers[Key<TSource, TDestination>(name)] = mapper;
         }
 
+        public void KeyedMap<TSource, TDestination>(string key, TSource source, TDestination destination)
+        {
+            // Safe way of comparing to null/default
+            if (Equals(source, default(TSource)))
+            {
+                // Don't invoke if we don't have a source!
+                return;
+            }
+
+            this.Mapper<TSource, TDestination>(key).Map(source, destination);
+        }
+
+        public TDestination KeyedMap<TSource, TDestination>(string key, TSource source)
+        {
+            return this.Mapper<TSource, TDestination>(key).Map(source);
+        }
+
         /// <summary>
         /// Determine the mapper to use.
         /// </summary>
@@ -107,7 +124,15 @@
 
             try
             {
-                var mapper = this.locator.GetInstance(type);
+                object mapper = null;
+                if (string.IsNullOrEmpty(name))
+                {
+                    mapper = this.locator.GetInstance(type);
+                }
+                else
+                {
+                    mapper = this.locator.GetInstance(type, name);
+                }
                 if (mapper != null)
                 {
                     // Cache the mapper - some serializations have 100K + calls to Mapper

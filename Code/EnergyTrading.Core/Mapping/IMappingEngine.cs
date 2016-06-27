@@ -47,5 +47,25 @@
         /// <param name="mapper">The mapper to register</param>
         /// <param name="name">Name to register the mapper against</param>
         void RegisterMap<TSource, TDestination>(IMapper<TSource, TDestination> mapper, string name = null);
+
+        /// <summary>
+        /// Map the source to the destination
+        /// </summary>
+        /// <typeparam name="TSource">Type of the source</typeparam>
+        /// <typeparam name="TDestination">Type of the destination</typeparam>
+        /// <param name="key">key to use during mapping process</param>
+        /// <param name="source">Object to map from</param>
+        /// <param name="destination">Object to map to</param>
+        void KeyedMap<TSource, TDestination>(string key, TSource source, TDestination destination);
+
+        /// <summary>
+        /// Map the source to a created destination
+        /// </summary>
+        /// <typeparam name="TSource">Type of the source</typeparam>
+        /// <typeparam name="TDestination">Type of the destination</typeparam>
+        /// <param name="key">key to use during mapping process</param>
+        /// <param name="source">Object to map from</param>
+        /// <returns>Generated object with values mapped from the source</returns>
+        TDestination KeyedMap<TSource, TDestination>(string key, TSource source);
     }
 }

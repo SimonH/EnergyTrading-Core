@@ -1,4 +1,6 @@
-﻿namespace EnergyTrading.UnitTest.Mapping
+﻿using System.Collections;
+
+namespace EnergyTrading.UnitTest.Mapping
 {
     using System;
 
@@ -789,6 +791,32 @@
             processor.Push("Fred", "http://sample.com");
             var candidate = processor.ToDateTimeOffset("Bob", isAttribute: true);
             Assert.AreEqual(new DateTimeOffset(2012, 7, 15, 5, 12, 34, new TimeSpan()), candidate);
+        }
+
+        public static IEnumerable ToUtcParsingTestData
+        {
+            get
+            {
+                yield return new TestCaseData("2012-07-15T05:12:34+04:00").Returns(new DateTime(2012, 7, 15, 1, 12, 34, DateTimeKind.Utc));
+                yield return new TestCaseData("2012-07-15T05:12:34Z").Returns(new DateTime(2012, 7, 15, 5, 12, 34, DateTimeKind.Utc));
+                yield return new TestCaseData("2012-07-15T05:12:34+00:00").Returns(new DateTime(2012, 7, 15, 5, 12, 34, DateTimeKind.Utc));
+                yield return new TestCaseData("2012-07-15T05:12:34+08:00").Returns(new DateTime(2012, 7, 14, 21, 12, 34, DateTimeKind.Utc));
+            }
+        }
+
+        [Test]
+        [TestCaseSource("ToUtcParsingTestData")]
+        public DateTime ToUniversalDateTimeParsesCorrectTime(string dateString)
+        {
+            string TestXml = string.Format(@"<Fred xmlns='http://sample.com'>
+                                                <Bob>{0}</Bob>
+                                             </Fred>", dateString);
+            var processor = XPathProcessor(TestXml);
+
+            processor.RegisterNamespace("sample", "http://sample.com");
+            processor.Push("Fred", "http://sample.com");
+
+            return processor.ToUniversalDateTime("Bob");
         }
 
         protected virtual XPathProcessor XPathProcessor(string xml)

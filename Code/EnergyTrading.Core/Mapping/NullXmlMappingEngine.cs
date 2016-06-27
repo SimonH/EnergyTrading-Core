@@ -105,5 +105,15 @@
         {
             throw new MappingException(ExceptionMessage);
         }
+
+        public void KeyedMap<TSource, TDestination>(string key, TSource source, TDestination destination)
+        {
+            throw new MappingException(ExceptionMessage);
+        }
+
+        public TDestination KeyedMap<TSource, TDestination>(string key, TSource source)
+        {
+            throw new MappingException(ExceptionMessage);
+        }
     }
 }

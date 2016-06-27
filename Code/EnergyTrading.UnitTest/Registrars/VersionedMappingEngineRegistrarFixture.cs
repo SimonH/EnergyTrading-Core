@@ -1,4 +1,7 @@
-﻿namespace EnergyTrading.UnitTest.Registrars
+﻿using System.Xml.Linq;
+using EnergyTrading.UnitTest.Registrars.Maps.Common.V2_1;
+
+namespace EnergyTrading.UnitTest.Registrars
 {
     using EnergyTrading.Mapping;
     using EnergyTrading.Test.Mapping;
@@ -69,6 +72,7 @@
             engine.ResolveMapper<Entity, Entity, EntityEntityMapper>();
             engine.ResolveMapper<Animal, AnimalModel, Maps.Common.V2_1.AnimalAnimalModelMapper>();
             engine.ResolveMapper<Child, ChildModel, ChildChildModelMapper>();
+            engine.ResolveMapper<Animal, XElement, NamedAnimalXmlMapper>("MapperName");
         }
     }
 }
