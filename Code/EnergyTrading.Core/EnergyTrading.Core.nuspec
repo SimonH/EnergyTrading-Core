@@ -14,12 +14,14 @@
         <dependencies>
             <group>
                 <dependency id="CommonServiceLocator" />
-                <dependency id="SH.EnergyTrading.Contracts" />
+                <dependency id="SH.EnergyTrading.Core" />
+                <dependency id="Microsoft.AspNet.WebApi.Client" />
+                <dependency id="Newtonsoft.Json" />
             </group>
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="EnergyTrading.Core\bin\Release\EnergyTrading.Core.*" target="lib\net40" />
+        <file src="web.client\bin\Release\web.client.*" target="lib\net40" />
     </files>
 </package>

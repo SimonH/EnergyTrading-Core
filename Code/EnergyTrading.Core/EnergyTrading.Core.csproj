@@ -30,7 +30,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -202,6 +202,7 @@
     <Compile Include="ProducerConsumer\WorkItem.cs" />
     <Compile Include="Search\SearchExtensions.cs" />
     <Compile Include="serialization\ITextSerializer.cs" />
+    <Compile Include="serialization\StringEnumBase.cs" />
     <Compile Include="ServiceModel\Channels\ChannelsExtensions.cs" />
     <Compile Include="ServiceModel\Channels\ClientMessageLogger.cs" />
     <Compile Include="ServiceModel\Channels\ClientMessageLoggerBehavior.cs" />
