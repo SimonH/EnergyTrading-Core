@@ -168,6 +168,8 @@
     <Compile Include="Infrastructure\IChain.cs" />
     <Compile Include="IO\FileExtensions.cs" />
     <Compile Include="IO\StreamExtensions.cs" />
+    <Compile Include="Logging\AggregatedLogger.cs" />
+    <Compile Include="Logging\AggregateLoggerFactory.cs" />
     <Compile Include="Logging\FilteredLogger.cs" />
     <Compile Include="Logging\FilteredLoggerFactory.cs" />
     <Compile Include="Logging\LogFilterLevel.cs" />
