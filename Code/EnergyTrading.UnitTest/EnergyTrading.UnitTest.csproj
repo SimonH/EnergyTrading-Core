@@ -212,7 +212,9 @@
     <Compile Include="Filtering\FilterExtensionsFixture.cs" />
     <Compile Include="Filtering\FilterFixture.cs" />
     <Compile Include="IO\FileExtensionsTests.cs" />
+    <Compile Include="Logging\FilteredLoggerFixture.cs" />
     <Compile Include="Logging\Log4NetLoggerFixture.cs" />
+    <Compile Include="Logging\TestLogger.cs" />
     <Compile Include="Mapping\CachingXmlMapperFactoryFixture.cs" />
     <Compile Include="Mapping\CompatibleXmlMappingEngineFactoryFixture.cs" />
     <Compile Include="Mapping\ConfigLoggerFactory.cs" />

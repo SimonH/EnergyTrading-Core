@@ -168,6 +168,9 @@
     <Compile Include="Infrastructure\IChain.cs" />
     <Compile Include="IO\FileExtensions.cs" />
     <Compile Include="IO\StreamExtensions.cs" />
+    <Compile Include="Logging\FilteredLogger.cs" />
+    <Compile Include="Logging\FilteredLoggerFactory.cs" />
+    <Compile Include="Logging\LogFilterLevel.cs" />
     <Compile Include="Mapping\CachingXmlMapperFactory.cs" />
     <Compile Include="Mapping\CompatibleXmlMappingEngineFactory.cs" />
     <Compile Include="Mapping\Context.cs" />
