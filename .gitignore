@@ -194,3 +194,4 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 /Code/scripts/UpdateLocalItems.ps1
+/Code/scripts/RemoveInstalledPackages.ps1

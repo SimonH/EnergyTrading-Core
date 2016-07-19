@@ -164,23 +164,33 @@ namespace EnergyTrading.Registrars
             }
         }
 
+        protected virtual IEnumerable<Assembly> GetRegistrationAssemblies()
+        {
+            yield return GetType().Assembly;
+        }
+
         private void AutoAreaRegisterMappers(IUnityContainer versioned, string area, double version)
         {
-            versioned.ConfigureAutoRegistration()
+            foreach (var assembly in GetRegistrationAssemblies())
+            {
+                versioned.ConfigureAutoRegistration()
                     .Include(
                         x => x.ImplementsOpenGeneric(MapperType) && IsVersionedMapper(x, area, version),
                         Then.Register().AsAllInterfacesOfType())
                     .Exclude(x => x.GetCustomAttributes(typeof(NamedMapperAttribute), false).FirstOrDefault() != null)
-                    .ApplyAutoRegistration(GetType().Assembly);
-            versioned.ConfigureAutoRegistration()
-                     .Include(
-                         x => x.ImplementsOpenGeneric(MapperType) && IsVersionedMapper(x, area, version) && x.GetCustomAttributes(typeof(NamedMapperAttribute), false).FirstOrDefault() != null,
-                         Then.Register().AsAllInterfacesOfType().WithName(t =>
-                         {
-                             var att = t.GetCustomAttributes(typeof(NamedMapperAttribute), false).First();
-                             return ((NamedMapperAttribute)att).Name;
-                         }))
-                     .ApplyAutoRegistration(GetType().Assembly);
+                    .ApplyAutoRegistration(assembly);
+                versioned.ConfigureAutoRegistration()
+                    .Include(
+                        x =>
+                            x.ImplementsOpenGeneric(MapperType) && IsVersionedMapper(x, area, version) &&
+                            x.GetCustomAttributes(typeof(NamedMapperAttribute), false).FirstOrDefault() != null,
+                        Then.Register().AsAllInterfacesOfType().WithName(t =>
+                        {
+                            var att = t.GetCustomAttributes(typeof(NamedMapperAttribute), false).First();
+                            return ((NamedMapperAttribute) att).Name;
+                        }))
+                    .ApplyAutoRegistration(assembly);
+            }
         }
     }
 }
