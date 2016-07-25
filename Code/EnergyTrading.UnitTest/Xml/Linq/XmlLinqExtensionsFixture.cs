@@ -788,7 +788,7 @@
         [Test]
         public void ToXElementIntDefaultValue()
         {
-            var value = 0;
+            var value = int.MinValue;
 
             var candidate = value.ToXElement("Test");
 
@@ -818,7 +818,7 @@
         [Test]
         public void ToXElementDecimaltDefaultValue()
         {
-            decimal value = 0;
+            decimal value = decimal.MinValue;
 
             var candidate = value.ToXElement("Test");
 
@@ -896,7 +896,7 @@
         [Test]
         public void ToXAttributeIntDefaultValue()
         {
-            var value = 0;
+            var value = int.MinValue;
 
             var candidate = value.ToXAttribute("Test");
 
@@ -926,7 +926,7 @@
         [Test]
         public void ToXAttributeDecimaltDefaultValue()
         {
-            decimal value = 0;
+            decimal value = decimal.MinValue;
 
             var candidate = value.ToXAttribute("Test");
 

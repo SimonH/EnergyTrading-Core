@@ -13,7 +13,10 @@
             this.NullProperties = new NullPropertyBag();
 
             // NB Needed if we need the default to be "null" i.e. not emitted
+            NullProperties.Loading = true;
             this.NullProperties["Total"] = true;
+            Total = int.MinValue;
+            NullProperties.Loading = false;
         }
 
         public NullPropertyBag NullProperties { get; private set; }

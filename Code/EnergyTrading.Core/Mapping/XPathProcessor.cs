@@ -277,7 +277,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>        
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual decimal ToDecimal(string xpath, string prefix = "", bool isAttribute = false, decimal defaultValue = 0)
+        public virtual decimal ToDecimal(string xpath, string prefix = "", bool isAttribute = false, decimal defaultValue = decimal.MinValue)
         {
             return ToValue(xpath,
                                 x =>
@@ -296,7 +296,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>        
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual double ToDouble(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = 0)
+        public virtual double ToDouble(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = float.MinValue)
         {
             return ToValue(xpath,
                                 x =>
@@ -315,7 +315,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>        
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual float ToFloat(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = 0)
+        public virtual float ToFloat(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = float.MinValue)
         {
             return ToSingle(xpath, prefix, isAttribute, defaultValue);
         }
@@ -328,7 +328,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>        
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual float ToSingle(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = 0)
+        public virtual float ToSingle(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = float.MinValue)
         {
             return ToValue(xpath,
                                 x =>
@@ -347,7 +347,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual int ToInt(string xpath, string prefix = "", bool isAttribute = false, int defaultValue = 0)
+        public virtual int ToInt(string xpath, string prefix = "", bool isAttribute = false, int defaultValue = int.MinValue)
         {
             return ToInt32(xpath, prefix, isAttribute, defaultValue);
         }
@@ -360,7 +360,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual int ToInt32(string xpath, string prefix = "", bool isAttribute = false, int defaultValue = 0)
+        public virtual int ToInt32(string xpath, string prefix = "", bool isAttribute = false, int defaultValue = int.MinValue)
         {
             return ToValue(xpath, x => x.Current.ValueAsInt, prefix, isAttribute, defaultValue);
         }
@@ -373,7 +373,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>        
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual long ToLong(string xpath, string prefix = "", bool isAttribute = false, long defaultValue = 0)
+        public virtual long ToLong(string xpath, string prefix = "", bool isAttribute = false, long defaultValue = long.MinValue)
         {
             return ToInt64(xpath, prefix, isAttribute, defaultValue);
         }
@@ -386,7 +386,7 @@
         /// <param name="isAttribute">Whether the node is an attribute or an element.</param>
         /// <param name="defaultValue">Value to return if node not present.</param>
         /// <returns>Value of the node or defaultValue if not present.</returns>
-        public virtual long ToInt64(string xpath, string prefix = "", bool isAttribute = false, long defaultValue = 0)
+        public virtual long ToInt64(string xpath, string prefix = "", bool isAttribute = false, long defaultValue = long.MinValue)
         {
             return ToValue(xpath, x => x.Current.ValueAsLong, prefix, isAttribute, defaultValue);
         }

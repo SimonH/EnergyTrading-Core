@@ -9,9 +9,12 @@
         public Entity()
         {
             this.NullProperties = new NullPropertyBag();
-
+            NullProperties.Loading = true;
             // NB Needed if we need the default to be "null" i.e. not emitted
             this.NullProperties["Total"] = true;
+            Value = int.MinValue;
+            Total = int.MinValue;
+            NullProperties.Loading = false;
         }
 
         public NullPropertyBag NullProperties { get; private set; }

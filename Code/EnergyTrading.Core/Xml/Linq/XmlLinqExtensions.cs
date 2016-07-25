@@ -423,7 +423,7 @@
         /// <param name="outputDefault">Whether to output the XAttribute if the value is the default value of the type.</param>
         /// <param name="defaultValue">Default value to compare to.</param>        
         /// <returns>A new XAttribute or null depending on value/outputDefault.</returns>
-        public static XAttribute ToXAttribute(this int value, string name, string xmlNamespace = null, bool outputDefault = false, int defaultValue = 0)
+        public static XAttribute ToXAttribute(this int value, string name, string xmlNamespace = null, bool outputDefault = false, int defaultValue = int.MinValue)
         {
             if (value == defaultValue && outputDefault == false)
             {
@@ -443,7 +443,7 @@
         /// <param name="outputDefault">Whether to output the XAttribute if the value is the default value of the type.</param>
         /// <param name="defaultValue">Default value to compare to.</param>        
         /// <returns>A new XAttribute or null depending on value/outputDefault.</returns>
-        public static XAttribute ToXAttribute(this decimal value, string name, string xmlNamespace = null, bool outputDefault = false, decimal defaultValue = 0)
+        public static XAttribute ToXAttribute(this decimal value, string name, string xmlNamespace = null, bool outputDefault = false, decimal defaultValue = decimal.MinValue)
         {
             if (value == defaultValue && outputDefault == false)
             {
@@ -582,7 +582,7 @@
         /// <param name="outputDefault">Whether to output the XElement if the value is the default value of the type.</param>
         /// <param name="defaultValue">Default value to compare to.</param>
         /// <returns>A new XElement or null depending on value/outputDefault.</returns>
-        public static XElement ToXElement(this int value, string name, string xmlNamespace = null, bool outputDefault = false, int defaultValue = 0)
+        public static XElement ToXElement(this int value, string name, string xmlNamespace = null, bool outputDefault = false, int defaultValue = int.MinValue)
         {
             if (value == defaultValue && outputDefault == false)
             {
@@ -602,7 +602,7 @@
         /// <param name="outputDefault">Whether to output the XElement if the value is the default value of the type.</param>
         /// <param name="defaultValue">Default value to compare to.</param>       
         /// <returns>A new XElement or null depending on value/outputDefault.</returns>
-        public static XElement ToXElement(this decimal value, string name, string xmlNamespace = null, bool outputDefault = false, decimal defaultValue = 0)
+        public static XElement ToXElement(this decimal value, string name, string xmlNamespace = null, bool outputDefault = false, decimal defaultValue = decimal.MinValue)
         {
             if (value == defaultValue && outputDefault == false)
             {

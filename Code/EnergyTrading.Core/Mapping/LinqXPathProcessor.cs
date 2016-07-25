@@ -61,21 +61,21 @@
         }
 
         /// <inheritdoc />
-        public override int ToInt32(string xpath, string prefix = "", bool isAttribute = false, int defaultValue = 0)
+        public override int ToInt32(string xpath, string prefix = "", bool isAttribute = false, int defaultValue = int.MinValue)
         {
             return isAttribute ? AttributeToValue(xpath, x => (int) x, prefix, defaultValue)
                                : ToValue(xpath, x => (int) x, prefix, defaultValue);
         }
 
         /// <inheritdoc />
-        public override long ToInt64(string xpath, string prefix = "", bool isAttribute = false, long defaultValue = 0)
+        public override long ToInt64(string xpath, string prefix = "", bool isAttribute = false, long defaultValue = long.MinValue)
         {
             return isAttribute ? AttributeToValue(xpath, x => (long)x, prefix, defaultValue)
                                : ToValue(xpath, x => (long)x, prefix, defaultValue);
         }
 
         /// <inheritdoc />
-        public override decimal ToDecimal(string xpath, string prefix = "", bool isAttribute = false, decimal defaultValue = 0)
+        public override decimal ToDecimal(string xpath, string prefix = "", bool isAttribute = false, decimal defaultValue = decimal.MinValue)
         {
             return isAttribute
                        ? AttributeToValue(
@@ -99,7 +99,7 @@
         }
 
         /// <inheritdoc />
-        public override double ToDouble(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = 0)
+        public override double ToDouble(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = float.MinValue)
         {
             return isAttribute
                        ? AttributeToValue(
@@ -123,7 +123,7 @@
         }
 
         /// <inheritdoc />
-        public override float ToSingle(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = 0)
+        public override float ToSingle(string xpath, string prefix = "", bool isAttribute = false, float defaultValue = float.MinValue)
         {
             return isAttribute
                        ? AttributeToValue(

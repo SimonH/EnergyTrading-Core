@@ -198,7 +198,7 @@
         /// <param name="outputDefault">Whether to output the XAttribute if the value is the default value of the type.</param>
         /// <param name="defaultValue">The default value to compare with.</param>        
         /// <returns>A new XAttribute or null depending on value/outputDefault.</returns>
-        protected XAttribute XAttribute(string name, int value, string xmlNamespace = "", bool outputDefault = false, int defaultValue = 0)
+        protected XAttribute XAttribute(string name, int value, string xmlNamespace = "", bool outputDefault = false, int defaultValue = int.MinValue)
         {
             return value.ToXAttribute(name, this.CanonicalAttributeNamespace(xmlNamespace), outputDefault, defaultValue);
         }
@@ -212,7 +212,7 @@
         /// <param name="outputDefault">Whether to output the XAttribute if the value is the default value of the type.</param>
         /// <param name="defaultValue">The default value to compare with.</param>        
         /// <returns>A new XAttribute or null depending on value/outputDefault.</returns>
-        protected XAttribute XAttribute(string name, decimal value, string xmlNamespace = "", bool outputDefault = false, decimal defaultValue = 0)
+        protected XAttribute XAttribute(string name, decimal value, string xmlNamespace = "", bool outputDefault = false, decimal defaultValue = decimal.MinValue)
         {
             return value.ToXAttribute(name, this.CanonicalAttributeNamespace(xmlNamespace), outputDefault, defaultValue);
         }
@@ -309,7 +309,7 @@
         /// <param name="outputDefault">Whether to output the XElement if the value is the default value of the type.</param>
         /// <param name="defaultValue">The default value to compare with.</param>        
         /// <returns>A new XElement or null depending on value/outputDefault.</returns>
-        protected XElement XElement(string name, int value, string xmlNamespace = "", bool outputDefault = false, int defaultValue = 0)
+        protected XElement XElement(string name, int value, string xmlNamespace = "", bool outputDefault = false, int defaultValue = int.MinValue)
         {
             return value.ToXElement(name, this.CanonicalNamespace(xmlNamespace), outputDefault, defaultValue);
         }
@@ -323,7 +323,7 @@
         /// <param name="outputDefault">Whether to output the XElement if the value is the default value of the type.</param>
         /// <param name="defaultValue">The default value to compare with.</param>        
         /// <returns>A new XElement or null depending on value/outputDefault.</returns>
-        protected XElement XElement(string name, decimal value, string xmlNamespace = "", bool outputDefault = false, decimal defaultValue = 0)
+        protected XElement XElement(string name, decimal value, string xmlNamespace = "", bool outputDefault = false, decimal defaultValue = decimal.MinValue)
         {
             return value.ToXElement(name, this.CanonicalNamespace(xmlNamespace), outputDefault, defaultValue);
         }
