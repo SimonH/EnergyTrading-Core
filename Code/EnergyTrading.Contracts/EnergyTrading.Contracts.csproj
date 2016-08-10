@@ -54,6 +54,8 @@
     <Compile Include="Errors\ErrorHandler.cs" />
     <Compile Include="Errors\ErrorMessage.cs" />
     <Compile Include="Errors\HandlerRequestDetails.cs" />
+    <Compile Include="Errors\HandlerResponseDetails.cs" />
+    <Compile Include="Errors\HandlerStatusValues.cs" />
     <Compile Include="Errors\ReferenceData.cs" />
     <Compile Include="Logging\LogMessage.cs" />
     <Compile Include="Logging\LogMessageException.cs" />
