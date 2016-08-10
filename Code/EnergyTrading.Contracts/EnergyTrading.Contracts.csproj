@@ -51,6 +51,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Atom\Link.cs" />
+    <Compile Include="Errors\ErrorHandler.cs" />
     <Compile Include="Errors\ErrorMessage.cs" />
     <Compile Include="Errors\HandlerRequestDetails.cs" />
     <Compile Include="Errors\ReferenceData.cs" />

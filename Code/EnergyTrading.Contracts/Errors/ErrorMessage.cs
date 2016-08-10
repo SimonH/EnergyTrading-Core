@@ -6,6 +6,11 @@ namespace EnergyTrading.Contracts.Errors
     public class ErrorMessage
     {
         /// <summary>
+        /// Unique identifier for the error.
+        /// </summary>
+        public string Id { get; set; }
+
+        /// <summary>
         /// UTC time when the error occurred
         /// </summary>
         public DateTime TimeStamp { get; set; }
