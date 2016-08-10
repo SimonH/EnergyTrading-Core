@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Contracts</id>
         <title>SH.EnergyTrading.Contracts</title>
         <description>Genric contract structures for WCF/XML/Atom</description>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <releaseNotes>none</releaseNotes>
         <copyright></copyright>
         <owners>SimonH</owners>
@@ -16,8 +16,6 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
     </metadata>
     <files>
-        <file src="EnergyTrading.Contracts\bin\Release\EnergyTrading.Contracts.dll" target="lib\net35" />
-        <file src="EnergyTrading.Contracts\bin\Release\EnergyTrading.Contracts.pdb" target="lib\net35" />
-        <file src="EnergyTrading.Contracts\bin\Release\EnergyTrading.Contracts.xml" target="lib\net35" />
+        <file src="EnergyTrading.Contracts\bin\Release\EnergyTrading.Contracts.*" target="lib\net40" />
     </files>
 </package>
