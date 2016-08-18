@@ -202,6 +202,7 @@
     <Compile Include="Extensions\ExceptionExtensionsFixture.cs" />
     <Compile Include="Extensions\MemoizationExtensionsFixture.cs" />
     <Compile Include="Extensions\ReflectionExtensionsFixture.cs" />
+    <Compile Include="Extensions\TypeExtensionsFixture.cs" />
     <Compile Include="FileProcessing\DefaultFileFilterFixture.cs" />
     <Compile Include="FileProcessing\FileProcessorEndpointFixture.cs" />
     <Compile Include="FileProcessing\IgnoreDirectoriesFileFilterFixture.cs" />

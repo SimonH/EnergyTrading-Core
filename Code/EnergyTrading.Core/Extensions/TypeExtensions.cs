@@ -386,5 +386,10 @@
         {
             return type.IsPrimitive || type == typeof(decimal) || type == typeof(string) || type == typeof(object) || type == typeof(DateTime) || type == typeof(DateTimeOffset);
         }
+
+        public static string AssemblyQualifiedNameWithoutVersion(this Type type)
+        {
+            return type.FullName + ", " + type.Assembly.GetName().Name;
+        }
     }
 }
