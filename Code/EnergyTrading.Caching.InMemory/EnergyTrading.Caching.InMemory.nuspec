@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Caching.InMemory</id>
         <title>SH.EnergyTrading.Caching.InMemory</title>        
         <description>Provides in memrory cache feature</description>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <authors>SimonH</authors>
