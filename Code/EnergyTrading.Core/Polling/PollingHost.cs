@@ -25,7 +25,7 @@
         public void Start()
         {
             this.Stop();
-            Logger.Info("Starting");
+            Logger.Debug("Starting");
 
             try
             {
@@ -41,12 +41,12 @@
                 throw;
             }
 
-            Logger.Info("Started");
+            Logger.Debug("Started");
         }
 
         public void Stop()
         {
-            Logger.Info("Stopping");
+            Logger.Debug("Stopping");
 
             try
             {
@@ -61,7 +61,7 @@
                 throw;
             }
 
-            Logger.Info("Stopped");
+            Logger.Debug("Stopped");
         }
     }
 }

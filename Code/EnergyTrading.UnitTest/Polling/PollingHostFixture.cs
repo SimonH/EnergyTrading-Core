@@ -23,8 +23,8 @@
         {
             var mockPro1 = new Mock<IPollProcessor>();
             var mockPro2 = new Mock<IPollProcessor>();
-            var counter1 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Info("Starting"));
-            var counter2 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Info("Started"));
+            var counter1 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Debug("Starting"));
+            var counter2 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Debug("Started"));
             var host = new PollingHost(new[] { mockPro1.Object, mockPro2.Object });
             host.Start();
             mockPro1.Verify(x => x.Start(), Times.Once());
@@ -63,8 +63,8 @@
             var mockPro1 = new Mock<IPollProcessor>();
             var mockPro2 = new Mock<IPollProcessor>();
             var host = new PollingHost(new[] { mockPro1.Object, mockPro2.Object });
-            var counter1 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Info("Stopping"));
-            var counter2 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Info("Stopped"));
+            var counter1 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Debug("Stopping"));
+            var counter2 = AssemblyLoggerProvider.MockLogger.StartCounting(x => x.Debug("Stopped"));
             host.Stop();
             mockPro1.Verify(x => x.Stop(), Times.Once());
             mockPro2.Verify(x => x.Stop(), Times.Once());

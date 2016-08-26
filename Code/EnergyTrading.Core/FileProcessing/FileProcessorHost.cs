@@ -38,7 +38,7 @@
             // Clean down existing state.
             this.Stop();
 
-            Logger.Info("Starting");
+            Logger.Debug("Starting");
 
             try
             {
@@ -55,7 +55,7 @@
                 throw;
             }
 
-            Logger.Info("Started");
+            Logger.Debug("Started");
         }
 
         /// <summary>
@@ -63,7 +63,7 @@
         /// </summary>
         public void Stop()
         {
-            Logger.Info("Stopping");
+            Logger.Debug("Stopping");
 
             // Synchronous - problem?
             try
@@ -79,7 +79,7 @@
                 throw;
             }
 
-            Logger.Info("Stopped");
+            Logger.Debug("Stopped");
         }
     }
 }

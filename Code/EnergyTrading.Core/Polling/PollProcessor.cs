@@ -64,14 +64,14 @@
 
         public void Start()
         {
-            Logger.Info("Starting");
+            Logger.Debug("Starting");
             this.timer.Start();
-            Logger.Info("Started");
+            Logger.Debug("Started");
         }
 
         public void Stop()
         {
-            Logger.Info("Stopping");
+            Logger.Debug("Stopping");
             // If elapsed is running try to let it finish
             var count = 0;
             var isRunning = true;
@@ -89,7 +89,7 @@
             }
             // done waiting stop the timer anyway
             this.timer.Stop();
-            Logger.Info("Stopped");
+            Logger.Debug("Stopped");
         }
 
         public string Name
