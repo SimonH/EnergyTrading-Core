@@ -216,6 +216,7 @@
     <Compile Include="Logging\FilteredLoggerFixture.cs" />
     <Compile Include="Logging\Log4NetLoggerFixture.cs" />
     <Compile Include="Logging\TestLogger.cs" />
+    <Compile Include="Logging\TryCatchLoggerFixture.cs" />
     <Compile Include="Mapping\CachingXmlMapperFactoryFixture.cs" />
     <Compile Include="Mapping\CompatibleXmlMappingEngineFactoryFixture.cs" />
     <Compile Include="Mapping\ConfigLoggerFactory.cs" />
