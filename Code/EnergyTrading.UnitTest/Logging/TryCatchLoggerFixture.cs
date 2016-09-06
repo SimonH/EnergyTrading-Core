@@ -33,7 +33,7 @@ namespace EnergyTrading.UnitTest.Logging
         public void Construction()
         {
             Assert.That(() => new TryCatchLogger(null, exceptionLogger.Object), Throws.TypeOf<ArgumentNullException>());
-            Assert.That(() => new TryCatchLogger(calledLogger.Object, null), Throws.TypeOf<ArgumentNullException>());
+            Assert.That(new TryCatchLogger(calledLogger.Object, null), Is.Not.Null);
             Assert.That(CreateSut(), Is.Not.Null);
         }
 
@@ -52,6 +52,13 @@ namespace EnergyTrading.UnitTest.Logging
             CreateSut().Debug("Test");
             exceptionLogger.Verify(l => l.Debug("Exception trying to call normal Logger process", It.IsAny<Exception>()), Times.Once());
             exceptionLogger.Verify(l => l.Debug("Test"), Times.Once());
+        }
+
+        [Test]
+        public void NothingHappensWhenExceptionLoggerIsNull()
+        {
+            WhenLoggerThrows(calledLogger);
+            new TryCatchLogger(calledLogger.Object, null).Debug("Test");
         }
 
         [Test]
