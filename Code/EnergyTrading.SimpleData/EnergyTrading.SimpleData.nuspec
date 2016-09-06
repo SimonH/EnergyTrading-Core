@@ -4,20 +4,20 @@
         <id>SH.EnergyTrading.SimpleData</id>
         <title>SH.EnergyTrading.SimpleData</title>
         <description>Common functionality for use with SimpleData</description>
-        <version>1.0.9</version>
+        <version>1.0.10</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <owners>SimonH</owners>
         <authors>SimonHST Architecture Team</authors>
         <projectUrl>https://github.com/simonH/EnergyTrading-Core</projectUrl>
-        <tags>EnergyTrading logging data SimpleData .net40</tags>
+        <tags>EnergyTrading Simple.Data library</tags>
         <dependencies>
             <group>
                 <dependency id="CommonServiceLocator" version="[1.0, 2.0)" />
                 <dependency id="SH.EnergyTrading.Contracts" />
                 <dependency id="SH.EnergyTrading.Core" />
-                <dependency id="Simple.Data.Core" version="[0.18.3.1]" />
-                <dependency id="Simple.Data.Ado" version="[0.18.3.1]" />
+                <dependency id="Simple.Data.Core" version="[0.19.0.0]" />
+                <dependency id="Simple.Data.Ado" version="[0.19.0.0]" />
             </group>
         </dependencies>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
