@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Contracts</id>
         <title>SH.EnergyTrading.Contracts</title>
         <description>Genric contract structures for WCF/XML/Atom</description>
-        <version>1.0.10</version>
+        <version>1.0.11</version>
         <releaseNotes>none</releaseNotes>
         <copyright></copyright>
         <owners>SimonH</owners>

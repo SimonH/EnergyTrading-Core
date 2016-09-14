@@ -153,6 +153,7 @@
     <Compile Include="Configuration\ChildElement.cs" />
     <Compile Include="Configuration\ConfigurationConfigurationManagerTests.cs" />
     <Compile Include="Configuration\ConfigurationManagerExtensionsTests.cs" />
+    <Compile Include="Configuration\NamedItemsSectionTests.cs" />
     <Compile Include="Configuration\ParentCollection.cs" />
     <Compile Include="Configuration\ParentElement.cs" />
     <Compile Include="Configuration\SampleSection.cs" />

@@ -86,6 +86,8 @@
     <Compile Include="Configuration\IGlobalConfigurationTask.cs" />
     <Compile Include="Configuration\NamedConfigElement.cs" />
     <Compile Include="Configuration\NamedConfigElementCollection.cs" />
+    <Compile Include="Configuration\NamedItemsCollection.cs" />
+    <Compile Include="Configuration\NamedItemsSection.cs" />
     <Compile Include="Console\CommandLineAliasAttribute.cs" />
     <Compile Include="Console\CommandLineParser.cs" />
     <Compile Include="Console\CommandLineSwitchAttribute.cs" />
