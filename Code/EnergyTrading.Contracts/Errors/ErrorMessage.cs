@@ -5,6 +5,11 @@ namespace EnergyTrading.Contracts.Errors
 {
     public class ErrorMessage
     {
+        public ErrorMessage()
+        {
+            TimeStamp = DateTime.UtcNow;
+        }
+
         /// <summary>
         /// Unique identifier for the error.
         /// </summary>

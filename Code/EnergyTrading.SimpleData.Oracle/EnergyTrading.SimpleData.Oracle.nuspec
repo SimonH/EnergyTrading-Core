@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.SimpleData.Oracle</id>
         <title>SH.EnergyTrading.SimpleData.Oracle</title>
         <description>Common functionality for use with SimpleData over Oracle</description>
-        <version>1.0.11</version>
+        <version>1.0.12</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <owners>SimonH</owners>

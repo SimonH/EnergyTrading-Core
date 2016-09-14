@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Core</id>
         <title>SH.EnergyTrading.Core</title>
         <description>The general EnergyTrading .NET common library</description>
-        <version>1.0.11</version>
+        <version>1.0.12</version>
         <releaseNotes></releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <owners>SimonH</owners>
