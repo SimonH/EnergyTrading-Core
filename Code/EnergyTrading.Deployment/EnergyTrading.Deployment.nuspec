@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Deployment</id>
         <title>SH.EnergyTrading.Deployment</title>
         <description>Deployment utilities integrates with source control, TeamCity and Confluence</description>
-        <version>1.0.12</version>
+        <version>1.0.13</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <authors>SimonH</authors>

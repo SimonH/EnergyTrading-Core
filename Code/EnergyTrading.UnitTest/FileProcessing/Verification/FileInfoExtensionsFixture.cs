@@ -26,7 +26,7 @@
         [Test]
         public void IsTestFileReturnsFalseIfFileInfoIsNull()
         {
-            var candidate = FileInfoExtensions.IsTestFile(null, this.mockConfigManager.Object);
+            var candidate = ((FileInfo)null).IsTestFile(this.mockConfigManager.Object);
             Assert.IsFalse(candidate);
         }
 
@@ -42,6 +42,38 @@
         {
             var candidate = new FileInfo(this.prefix + "someOtherFileName.txt").IsTestFile(this.mockConfigManager.Object);
             Assert.IsTrue(candidate);
+        }
+        [Test]
+        public void IsTestFileReturnsFalseIfStringIsNull()
+        {
+            var candidate = ((string)null).IsTestFile(this.mockConfigManager.Object);
+            Assert.IsFalse(candidate);
+        }
+
+        [Test]
+        public void IsTestFileReturnsFalseIfStringDoesNotStartWithPrefix()
+        {
+            var candidate = "someOtherFileName.txt".IsTestFile(this.mockConfigManager.Object);
+            Assert.IsFalse(candidate);
+        }
+
+        [Test]
+        public void IsTestFileReturnsTrueIfStringStartsWithPrefix()
+        {
+            var candidate = (this.prefix + "someOtherFileName.txt").IsTestFile(this.mockConfigManager.Object);
+            Assert.IsTrue(candidate);
+        }
+
+        [Test]
+        [TestCase(null, null)]
+        [TestCase("", null)]
+        [TestCase("    ", null)]
+        [TestCase("filenamewithoutId.txt", null)]
+        [TestCase("filenamewithId_uniqueId.txt", "uniqueId")]
+        public void GetTestIdFromFileName(string fileName, string expected)
+        {
+            var candidate = fileName.GetTestIdFromFileName();
+            Assert.That(candidate, Is.EqualTo(expected));
         }
     }
 }
