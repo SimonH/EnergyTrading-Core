@@ -1,4 +1,6 @@
-﻿namespace EnergyTrading.Wrappers
+﻿using System.Collections.Generic;
+
+namespace EnergyTrading.Wrappers
 {
     using System.IO;
 
@@ -10,5 +12,7 @@
         bool Exists(string path);
         DirectoryInfo CreateDirectory(string path);
         void Delete(string path);
+        IEnumerable<string> EnumerateFiles(string path);
+        IEnumerable<string> EnumerateDirectories(string path);
     }
 }

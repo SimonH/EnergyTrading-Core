@@ -1,4 +1,6 @@
-﻿namespace EnergyTrading.Wrappers
+﻿using System.Collections.Generic;
+
+namespace EnergyTrading.Wrappers
 {
     using System.IO;
 
@@ -20,6 +22,16 @@
         public void Delete(string path)
         {
             Directory.Delete(path);
+        }
+
+        public IEnumerable<string> EnumerateFiles(string path)
+        {
+            return Directory.EnumerateFiles(path);
+        }
+
+        public IEnumerable<string> EnumerateDirectories(string path)
+        {
+            return Directory.EnumerateDirectories(path);
         }
     }
 }
