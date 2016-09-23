@@ -126,6 +126,7 @@
     <Compile Include="FileProcessing\Configuration\FileProcessorElement.cs" />
     <Compile Include="FileProcessing\Configuration\FileProcessorHostSection.cs" />
     <Compile Include="FileProcessing\DefaultFileFilter.cs" />
+    <Compile Include="FileProcessing\DeleteTestFilePostProcessor.cs" />
     <Compile Include="FileProcessing\FileHandling\DeleteSuccessfulFileHandlingStrategy.cs" />
     <Compile Include="FileProcessing\FileHandling\FileProcessResult.cs" />
     <Compile Include="FileProcessing\FileHandling\IFileProcessResultHandler.cs" />
