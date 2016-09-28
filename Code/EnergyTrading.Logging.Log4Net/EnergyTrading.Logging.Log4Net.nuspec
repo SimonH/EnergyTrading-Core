@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Logging.Log4Net</id>
         <title>SH.EnergyTrading.Logging.Log4Net</title>
         <description>Log4Net implementation of the EnergyTrading logging library</description>
-        <version>1.0.17</version>
+        <version>1.0.18</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <authors>SimonH</authors>
