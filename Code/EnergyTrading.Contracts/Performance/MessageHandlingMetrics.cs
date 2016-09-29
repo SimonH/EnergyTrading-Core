@@ -3,7 +3,7 @@
 namespace EnergyTrading.Contracts.Performance
 {
     [Serializable]
-    public class MesageHandlingMetrics : MessageMetrics
+    public class MessageHandlingMetrics : MessageMetrics
     {
         public string Processor { get; set; }
         public int? TimeInHandlerMs { get; set; }
@@ -25,7 +25,7 @@ namespace EnergyTrading.Contracts.Performance
             if (obj == null)
                 return false;
 
-            var metrics = obj as MesageHandlingMetrics;
+            var metrics = obj as MessageHandlingMetrics;
             return metrics != null && ToString().Equals(obj.ToString());
         }
     }

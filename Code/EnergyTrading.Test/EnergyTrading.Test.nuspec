@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Test</id>
         <title>SH.EnergyTrading.Test</title>
         <description>Contains base test library and helpers</description>
-        <version>1.0.21</version>
+        <version>1.0.22</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <authors>SimonH</authors>

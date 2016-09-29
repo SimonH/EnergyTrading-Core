@@ -59,7 +59,7 @@
     <Compile Include="Errors\ReferenceData.cs" />
     <Compile Include="Logging\LogMessage.cs" />
     <Compile Include="Logging\LogMessageException.cs" />
-    <Compile Include="Performance\MesageHandlingMetrics.cs" />
+    <Compile Include="Performance\MessageHandlingMetrics.cs" />
     <Compile Include="Performance\MessageMetrics.cs" />
     <Compile Include="Performance\MessageTransportMetrics.cs" />
     <Compile Include="Performance\PerformanceMetrics.cs" />
