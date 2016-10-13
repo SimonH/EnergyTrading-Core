@@ -18,7 +18,7 @@
         public void Register(IUnityContainer container)
         {
             container.RegisterType<IXmlVersionDetector, XmlVersionDetector>(
-                new ContainerControlledLifetimeManager(),
+                new PerResolveLifetimeManager(),
                 new InjectionConstructor(new ResolvedParameter<IXmlVersionDetector[]>()));
         }
     }

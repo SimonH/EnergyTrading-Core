@@ -168,7 +168,7 @@
                 formatter.WriteObject(stream, source);
                 stream.Seek(0, SeekOrigin.Begin);
 
-                using (var reader = XmlDictionaryReader.CreateTextReader(stream, new XmlDictionaryReaderQuotas()))
+                using (var reader = XmlDictionaryReader.CreateTextReader(stream, XmlDictionaryReaderQuotas.Max))
                 {
                     return (T)formatter.ReadObject(reader, true);
                 }

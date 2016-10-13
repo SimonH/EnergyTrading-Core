@@ -25,7 +25,7 @@ namespace EnergyTrading.Registrars
         /// </summary>
         protected MappingEngineRegistrar()
         {
-            CacheMappers = true;
+            CacheMappers = false;
         }
 
         /// <summary>

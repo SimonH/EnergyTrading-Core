@@ -34,7 +34,7 @@
             container.RegisterType<IXmlMappingEngineFactory, LocatorXmlMappingEngineFactory>("locator");
 
             container.RegisterType<IXmlMappingEngineFactory, CompatibleXmlMappingEngineFactory>(
-                new ContainerControlledLifetimeManager(),
+                new PerThreadLifetimeManager(),
                 new InjectionConstructor(
                     new ResolvedParameter<IXmlMappingEngineFactory>("locator"),
                     new ResolvedParameter<IXmlSchemaRegistry>()));

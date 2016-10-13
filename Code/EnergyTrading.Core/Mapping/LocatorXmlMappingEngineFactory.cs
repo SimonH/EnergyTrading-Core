@@ -1,4 +1,6 @@
-﻿namespace EnergyTrading.Mapping
+﻿using System.Collections.Generic;
+
+namespace EnergyTrading.Mapping
 {
     using System.Collections.Concurrent;
 
@@ -10,12 +12,12 @@
     public class LocatorXmlMappingEngineFactory : IXmlMappingEngineFactory
     {
         private readonly IServiceLocator locator;
-        private readonly ConcurrentDictionary<string, IXmlMappingEngine> engines;
+        private readonly Dictionary<string, IXmlMappingEngine> engines;
 
         public LocatorXmlMappingEngineFactory(IServiceLocator locator)
         {
             this.locator = locator;
-            this.engines = new ConcurrentDictionary<string, IXmlMappingEngine>();
+            this.engines = new Dictionary<string, IXmlMappingEngine>();
         }
 
         /// <copydocfrom cref="IXmlMappingEngineFactory.Find" />
