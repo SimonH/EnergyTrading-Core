@@ -19,15 +19,14 @@
     /// </example>
     public class TypeTrackingExtension : UnityContainerExtension
     {
-        private readonly ConcurrentDictionary<Type, HashSet<string>> registeredTypes;
+        private readonly Dictionary<Type, HashSet<string>> registeredTypes;
 
         /// <summary>
         /// Initialize a new instance of the <see cref="TypeTrackingExtension" /> class.
         /// </summary>
         public TypeTrackingExtension()
         {
-            // TODO: Check if we need to lock on add?
-            registeredTypes = new ConcurrentDictionary<Type, HashSet<string>>();
+            registeredTypes = new Dictionary<Type, HashSet<string>>();
         }
 
         /// <summary>
@@ -203,12 +202,17 @@
         private void Register(string name, Type type)
         {
             // Find or create the bucket.
-            var names = registeredTypes.GetOrAdd(type, (key) => new HashSet<string>());
-
+            HashSet<string> names;
             // Add the name to the bucket
             name = string.IsNullOrEmpty(name) ? string.Empty : name;
-
-            names.Add(name);
+            if (!registeredTypes.TryGetValue(type, out names))
+            {
+                registeredTypes.Add(type, new HashSet<string>(new string[] { name }));
+            }
+            else
+            {
+                names.Add(name);
+            }
         }
     }
 }

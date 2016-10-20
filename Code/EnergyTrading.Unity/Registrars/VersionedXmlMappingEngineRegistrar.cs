@@ -129,7 +129,7 @@
             }
         }
 
-        private static IXmlSchemaRegistry SchemaRegistry(IUnityContainer container)
+        protected static IXmlSchemaRegistry SchemaRegistry(IUnityContainer container)
         {
             try
             {

@@ -12,12 +12,25 @@
     /// </summary>
     public class XmlMappingEngine : IXmlMappingEngine
     {
-        protected const string XsiPrefix = "xsi";
-        protected const string XsiNamespace = "http://www.w3.org/2001/XMLSchema-instance";
+        private const string XsiPrefix = "xsi";
+        private const string XsiNamespace = "http://www.w3.org/2001/XMLSchema-instance";
 
-        private readonly IXmlMapperFactory factory;
-        private readonly IDictionary<Tuple<string, string>, Type> xmlTypes;
-        private Context context;
+        private readonly IXmlMapperFactory _factory;
+        private Context _context;
+        private IDictionary<Tuple<string, string>, Type> _xmlTypes;
+
+        private IDictionary<Tuple<string, string>, Type> XmlTypes => _xmlTypes ?? (_xmlTypes = CreateXmlTypeDictionary());
+
+        protected virtual IDictionary<Tuple<string, string>, Type> CreateXmlTypeDictionary()
+        {
+            return new ConcurrentDictionary<Tuple<string, string>, Type>();
+        }
+
+        protected virtual void InitializeManagers()
+        {
+            XmlNamespaceManager = new XmlNamespaceManager(new NameTable());
+            NamespaceManager = new BaseNamespaceManager(XmlNamespaceManager);
+        }
 
         /// <summary>
         /// Create a new instance of the <see cref="XmlMappingEngine" /> class.
@@ -25,12 +38,10 @@
         /// <param name="factory">Factory to use.s</param>
         public XmlMappingEngine(IXmlMapperFactory factory)
         {
-            this.factory = factory;
-            xmlTypes = new ConcurrentDictionary<Tuple<string, string>, Type>();
+            _factory = factory;
 
-            XmlNamespaceManager = new XmlNamespaceManager(new NameTable());
-            NamespaceManager = new BaseNamespaceManager(XmlNamespaceManager);
-
+            // ReSharper disable once VirtualMemberCallInConstructor
+            InitializeManagers();
             // Always register value that allows us to declare XML types.
             RegisterNamespace(XsiPrefix, XsiNamespace);
         }
@@ -38,19 +49,19 @@
         /// <copydocfrom cref="IMappingEngine.Context" />
         public Context Context
         {
-            get { return context ?? (context = new Context()); }
-            set { context = value; }
+            get { return _context ?? (_context = new Context()); }
+            set { _context = value; }
         }
       
         /// <summary>
         /// Gets the namespace manager used for handling namespaces and their prefixes
         /// </summary>
-        public INamespaceManager NamespaceManager { get; private set; }
+        public INamespaceManager NamespaceManager { get; protected set; }
 
         /// <summary>
         /// Gets the internal namespace manager.
         /// </summary>
-        public XmlNamespaceManager XmlNamespaceManager { get; private set; }
+        public XmlNamespaceManager XmlNamespaceManager { get; protected set; }
 
         /// <copydocfrom cref="IXmlMappingEngine.CreateDocument{T}" />
         public XElement CreateDocument<TSource>(TSource source)
@@ -185,7 +196,7 @@
                 throw new ArgumentException("Mapper is not an IXmlMapper", "mapper");
             }
 
-            factory.Register(xmlMapper, name);
+            _factory.Register(xmlMapper, name);
         }
 
         /// <copydocfrom cref="IXmlMappingEngine.RegisterNamespace" />
@@ -198,7 +209,7 @@
         public void RegisterXmlType(string xmlNamespace, string xmlType, Type type)
         {
             var key = new Tuple<string, string>(xmlNamespace, xmlType);
-            xmlTypes[key] = type;
+            XmlTypes[key] = type;
         }
 
         /// <summary>
@@ -230,7 +241,7 @@
             }
 
             Type type;
-            if (xmlTypes.TryGetValue(new Tuple<string, string>(xmlNamespace, xmlType), out type))
+            if (XmlTypes.TryGetValue(new Tuple<string, string>(xmlNamespace, xmlType), out type))
             {
                 return (IXmlMapper<TSource>)this.Mapper(typeof(TSource), type);
             }
@@ -247,7 +258,7 @@
         /// <returns>A <see cref="IXmlMapper{T, D}" /></returns>
         protected object Mapper(Type source, Type destination, string name = null)
         {
-            return factory.Mapper(source, destination, name);
+            return _factory.Mapper(source, destination, name);
         }
     }
 }

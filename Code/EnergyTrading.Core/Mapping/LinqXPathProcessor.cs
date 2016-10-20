@@ -1,4 +1,6 @@
-﻿namespace EnergyTrading.Mapping
+﻿using System.Xml;
+
+namespace EnergyTrading.Mapping
 {
     using System;
     using System.Collections.Generic;
@@ -222,9 +224,10 @@
         /// <inheritdoc />
         protected override void InitializeManagers(XPathNavigator navigator)
         {
+            Navigator = navigator;
             if (NamespaceManager == null)
             {
-                NamespaceManager = new NamespaceManager();
+                NamespaceManager = new PerThreadBaseNamespaceManager(new XmlNamespaceManager(Navigator.NameTable));
             }
 
             if (XPathManager == null)

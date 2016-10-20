@@ -6,44 +6,24 @@
     /// <summary>
     /// Implementation of <see cref="IXmlMapperFactory" /> that caches results.
     /// </summary>
-    public class CachingXmlMapperFactory : IXmlMapperFactory
+    public class CachingXmlMapperFactory : DictionaryCachingXmlMapperFactory<ConcurrentDictionary<string, object>> 
     {
-        private readonly IXmlMapperFactory factory;
-        private readonly ConcurrentDictionary<string, object> mappers;
 
-        public CachingXmlMapperFactory(IXmlMapperFactory factory)
+        public CachingXmlMapperFactory(IXmlMapperFactory factory) : base(factory)
         {
-            this.factory = factory;
-            mappers = new ConcurrentDictionary<string, object>();
         }
 
-        /// <contentfrom cref="IXmlMapperFactory.Mapper{T, U}" />
-        public IXmlMapper<TSource, TDestination> Mapper<TSource, TDestination>(string name = null)
+        protected override ConcurrentDictionary<string, object> CreateDictionary()
         {
-            return (IXmlMapper<TSource, TDestination>)Mapper(typeof(TSource), typeof(TDestination), name);
+            return new ConcurrentDictionary<string, object>();
         }
 
         /// <contentfrom cref="IXmlMapperFactory.Mapper" />
-        public object Mapper(Type source, Type destination, string name = null)
+        public override object Mapper(Type source, Type destination, string name = null)
         {
             var key = Key(source, destination, name);
 
-            return mappers.GetOrAdd(key, s => factory.Mapper(source, destination, name));
-        }
-
-        /// <contentfrom cref="IXmlMapperFactory.Register{T, U}" />
-        public void Register<TSource, TDestination>(IXmlMapper<TSource, TDestination> mapper, string name = null)
-        {
-            if (mapper == null) { throw new ArgumentNullException("mapper"); }
-
-            var key = Key(typeof(TSource), typeof(TDestination), name);
-
-            mappers[key] = mapper;
-        }
-
-        private static string Key(Type source, Type destination, string name = null)
-        {
-            return source.FullName + "|" + destination.FullName + "|" + name;
+            return Mappers.GetOrAdd(key, s => Factory.Mapper(source, destination, name));
         }
     }
 }

@@ -183,6 +183,7 @@
     <Compile Include="Mapping\CachingXmlMapperFactory.cs" />
     <Compile Include="Mapping\CompatibleXmlMappingEngineFactory.cs" />
     <Compile Include="Mapping\Context.cs" />
+    <Compile Include="Mapping\DictionaryCachingXmlMapperFactory.cs" />
     <Compile Include="Mapping\Extensions\ContextExtensions.cs" />
     <Compile Include="Mapping\IXmlMapperFactory.cs" />
     <Compile Include="Mapping\IXmlSchemaRegistry.cs" />
@@ -191,6 +192,9 @@
     <Compile Include="Mapping\MappingExtensions.cs" />
     <Compile Include="Mapping\NamedMapperAttribute.cs" />
     <Compile Include="Mapping\NullXmlMappingEngine.cs" />
+    <Compile Include="Mapping\PerThreadBaseNamespaceManager.cs" />
+    <Compile Include="Mapping\PerThreadCachingXmlMapperFactory.cs" />
+    <Compile Include="Mapping\PerThreadXmlMappingEngine.cs" />
     <Compile Include="Mapping\SchemaVersion.cs" />
     <Compile Include="Mapping\SchemaVersionExtensions.cs" />
     <Compile Include="Mapping\XmlEngineResolutionErrorCode.cs" />

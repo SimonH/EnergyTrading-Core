@@ -1,4 +1,7 @@
-﻿namespace EnergyTrading.Extensions
+﻿using System.Collections.Generic;
+using System.Web.Caching;
+
+namespace EnergyTrading.Extensions
 {
     using System;
     using System.Collections.Concurrent;
@@ -77,6 +80,78 @@
         {
             return f.Tuplify().Memoize().Detuplify();
         }
+
+        /// <summary>
+        /// Memoize a function.
+        /// </summary>
+        /// <typeparam name="T1">Argument type of the function.</typeparam>
+        /// <typeparam name="R">Result type of the function.</typeparam>
+        /// <param name="f">Function to execute, needs to be a strict function i.e. no side-effects.</param>
+        /// <returns>Result of the function</returns>
+        public static Func<T1, R> SingleThreadMemoize<T1, R>(this Func<T1, R> f)
+        {
+            var cache = new Dictionary<T1, R>();
+            return a =>
+            {
+                R r;
+                if (!cache.TryGetValue(a, out r))
+                {
+                    r = f(a);
+                    try
+                    {
+                        cache.Add(a, r);
+                    }
+                    catch (Exception)
+                    {
+                        // might be a case where it's already added
+                    }
+                }
+                return r;
+            };
+        }
+
+        /// <summary>
+        /// Memoize a function.
+        /// </summary>
+        /// <typeparam name="T1">First argument type of the function.</typeparam>
+        /// <typeparam name="T2">Second argument type of the function.</typeparam>         
+        /// <typeparam name="R">Result type of the function.</typeparam>
+        /// <param name="f">Function to execute, needs to be a strict function i.e. no side-effects.</param>
+        /// <returns>Result of the function</returns>
+        public static Func<T1, T2, R> SingleThreadMemoize<T1, T2, R>(this Func<T1, T2, R> f)
+        {
+            return f.Tuplify().SingleThreadMemoize().Detuplify();
+        }
+
+        /// <summary>
+        /// Memoize a function.
+        /// </summary>
+        /// <typeparam name="T1">First argument type of the function.</typeparam>
+        /// <typeparam name="T2">Second argument type of the function.</typeparam> 
+        /// <typeparam name="T3">Third argument type of the function.</typeparam>        
+        /// <typeparam name="R">Result type of the function.</typeparam>
+        /// <param name="f">Function to execute, needs to be a strict function i.e. no side-effects.</param>
+        /// <returns>Result of the function</returns>
+        public static Func<T1, T2, T3, R> SingleThreadMemoize<T1, T2, T3, R>(this Func<T1, T2, T3, R> f)
+        {
+            return f.Tuplify().SingleThreadMemoize().Detuplify();
+        }
+
+        /// <summary>
+        /// Memoize a function.
+        /// </summary>
+        /// <typeparam name="T1">First argument type of the function.</typeparam>
+        /// <typeparam name="T2">Second argument type of the function.</typeparam> 
+        /// <typeparam name="T3">Third argument type of the function.</typeparam>
+        /// <typeparam name="T4">Fourth argument type of the function.</typeparam>        
+        /// <typeparam name="R">Result type of the function.</typeparam>
+        /// <param name="f">Function to execute, needs to be a strict function i.e. no side-effects.</param>
+        /// <returns>Result of the function</returns>
+        public static Func<T1, T2, T3, T4, R> SingleThreadMemoize<T1, T2, T3, T4, R>(this Func<T1, T2, T3, T4, R> f)
+        {
+            return f.Tuplify().SingleThreadMemoize().Detuplify();
+        }
+
 
         /// <summary>
         /// Apply a function to a tuple.
@@ -161,5 +236,7 @@
         {
             return (a, b, c, d) => f(Tuple.Create(a, b, c, d));
         }
+
+
     }
 }

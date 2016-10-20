@@ -303,6 +303,8 @@
     <Compile Include="Registrars\Maps\Common\V2\AnimalAnimalModelMapper.cs" />
     <Compile Include="Registrars\Maps\OwnerEntityMapper.cs" />
     <Compile Include="Registrars\Maps\OwnerXmlMapper.cs" />
+    <Compile Include="Registrars\PerThreadAnimalXmlMappingEngineRegistrar.cs" />
+    <Compile Include="Registrars\PerThreadVersionedXmlMappingEngineRegistrarFixture.cs" />
     <Compile Include="Registrars\VersionedMappingEngineRegistrarFixture.cs" />
     <Compile Include="Registrars\WrappersRegistrarFixture.cs" />
     <Compile Include="Registrars\XmlMappingEngineFactoryRegistrarFixture.cs" />

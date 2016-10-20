@@ -8,5 +8,7 @@ namespace EnergyTrading.Contracts.Errors
         public DateTime Since { get; set; }
 
         public string[] ValidErrorCodes { get; set; }
+
+        public int Timeout { get; set; }
     }
 }

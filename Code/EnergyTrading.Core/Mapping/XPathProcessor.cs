@@ -73,7 +73,7 @@
         /// <summary>
         /// Gets or sets the XPathNavigator we use to process XPaths.
         /// </summary>
-        private XPathNavigator Navigator { get; set; }
+        protected XPathNavigator Navigator { get; set; }
 
         /// <summary>
         /// Initialize the processor.

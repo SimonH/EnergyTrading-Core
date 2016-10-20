@@ -117,6 +117,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrars\ConfigurationManagerRegistrar.cs" />
     <Compile Include="Registrars\MappingEngineRegistrar.cs" />
+    <Compile Include="Registrars\PerThreadVersionedXmlMappingEngineRegistrar.cs" />
     <Compile Include="Registrars\RegistrarExtensions.cs" />
     <Compile Include="Registrars\VersionedMappingEngineRegistrar.cs" />
     <Compile Include="Registrars\VersionedXmlMappingEngineRegistrar.cs" />

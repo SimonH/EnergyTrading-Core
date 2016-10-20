@@ -10,8 +10,17 @@
     /// </summary>
     public class BaseNamespaceManager : INamespaceManager
     {
-        private readonly XmlNamespaceManager manager;
-        private readonly Func<string, string> nsQual;
+        private readonly XmlNamespaceManager _manager;
+
+        private Func<string, string> _nsQual;
+
+        protected virtual Func<string, string> InitialiseNamespaceQualifier()
+        {
+            Func<string, string> f = QualifyNamespace;
+            return f.Memoize();
+        }
+
+        private Func<string, string> NsQual => _nsQual ?? (_nsQual = InitialiseNamespaceQualifier());
 
         /// <summary>
         /// Creates a new instance of the <see cref="BaseNamespaceManager" /> class.
@@ -19,10 +28,7 @@
         /// <param name="manager">XmlNamespaceManager to use.</param>
         public BaseNamespaceManager(XmlNamespaceManager manager)
         {
-            this.manager = manager;
-
-            Func<string, string> f = QualifyNamespace;
-            nsQual = f.Memoize();
+            _manager = manager;
         }
 
         /// <contentfrom cref="INamespaceManager.RegisterNamespace" />
@@ -40,36 +46,36 @@
                 {
                     throw new XmlException("The ':' character, hexadecimal value 0x3A, cannot be included in a name - " + prefix);
                 }
-                manager.AddNamespace(prefix, uri);
+                _manager.AddNamespace(prefix, uri);
             }            
         }
 
         /// <contentfrom cref="INamespaceManager.LookupNamespace" />
         public string LookupNamespace(string prefix, bool xname = false)
         {
-            var uri = manager.LookupNamespace(prefix);
-            return uri == string.Empty || !xname ? uri : nsQual(uri);
+            var uri = _manager.LookupNamespace(prefix);
+            return uri == string.Empty || !xname ? uri : NsQual(uri);
         }
 
         /// <contentfrom cref="INamespaceManager.LookupPrefix" />
         public string LookupPrefix(string uri)
         {
-            return manager.LookupPrefix(uri);
+            return _manager.LookupPrefix(uri);
         }
 
         /// <contentfrom cref="INamespaceManager.NamespaceExists" />
         public bool NamespaceExists(string uri)
         {
-            return !string.IsNullOrEmpty(manager.LookupPrefix(uri));
+            return !string.IsNullOrEmpty(_manager.LookupPrefix(uri));
         }
 
         /// <contentfrom cref="INamespaceManager.PrefixExists" />
         public bool PrefixExists(string prefix)
         {
-            return !string.IsNullOrEmpty(manager.LookupNamespace(prefix));
+            return !string.IsNullOrEmpty(_manager.LookupNamespace(prefix));
         }
 
-        private string QualifyNamespace(string uri)
+        protected string QualifyNamespace(string uri)
         {
             return uri == string.Empty ? string.Empty : string.Format("{{{0}}}", uri);
         }
