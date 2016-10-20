@@ -5,6 +5,8 @@
         Processing,
         Succeeded,
         Failed,
-        Retry
+        Retry,
+        Notifying,
+        Notified
     }
 }
