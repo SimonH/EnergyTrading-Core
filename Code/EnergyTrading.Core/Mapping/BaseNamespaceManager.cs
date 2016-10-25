@@ -39,7 +39,7 @@
                 return;
             }
 
-            var pf2 = LookupNamespace(uri);
+            var pf2 = LookupNamespace(prefix);
             if (string.IsNullOrEmpty(pf2))
             {
                 if (prefix.Contains(":"))

@@ -44,7 +44,7 @@
                 return;
             }
 
-            var pf2 = this.LookupNamespace(xmlNamespace);
+            var pf2 = this.LookupNamespace(prefix);
             if (!string.IsNullOrEmpty(pf2))
             {
                 return;
