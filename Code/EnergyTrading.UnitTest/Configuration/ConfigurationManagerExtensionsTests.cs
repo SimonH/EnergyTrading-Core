@@ -33,8 +33,7 @@
         {
             var settings = new ConnectionStringSettings("testName", "testconnectionString", "testProviderName");
             this.mockConfigManager.Setup(x => x.ConnectionStrings).Returns(new ConnectionStringSettingsCollection { settings });
-            this.mockConfigManager.Setup(x => x.AppSettings).Returns(new NameValueCollection());
-            var result = this.mockConfigManager.Object.GetConnectionSettingsWithPassword("testName");
+            var result = mockConfigManager.Object.GetConnectionSettingsWithPassword("testName");
             Assert.AreEqual(settings.Name, result.Name);
             Assert.AreEqual(settings.ConnectionString, result.ConnectionString);
             Assert.AreEqual(settings.ProviderName, result.ProviderName);

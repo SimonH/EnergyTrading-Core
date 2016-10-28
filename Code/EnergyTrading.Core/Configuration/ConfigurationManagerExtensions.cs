@@ -23,10 +23,10 @@
 
             var passwordKey = connectionName + ".EncryptedPassword";
             var passwordSection = string.Empty;
-            if (configurationManager.AppSettings.AllKeys.Contains(passwordKey))
+            var encryptedPassword = configurationManager.GetAppSettingValue(passwordKey);
+            if (encryptedPassword != null)
             {
-                var encrypted = configurationManager.AppSettings[passwordKey];
-                passwordSection = ";Password=" + encrypted.DecryptString();
+                passwordSection = ";Password=" + encryptedPassword.DecryptString();
             }
 
             return new ConnectionStringSettings(connectionName, connectionSettings.ConnectionString + passwordSection, connectionSettings.ProviderName);
@@ -39,7 +39,7 @@
 
         public static string GetAppSettingValue(this IConfigurationManager configurationManager, string appSettingKey)
         {
-            if (configurationManager != null && configurationManager.AppSettings.AllKeys.Contains(appSettingKey) && !string.IsNullOrWhiteSpace(configurationManager.AppSettings[appSettingKey]))
+            if (configurationManager != null && configurationManager.AppSettings != null && configurationManager.AppSettings.AllKeys.Contains(appSettingKey) && !string.IsNullOrWhiteSpace(configurationManager.AppSettings[appSettingKey]))
             {
                 return configurationManager.AppSettings[appSettingKey];
             }
