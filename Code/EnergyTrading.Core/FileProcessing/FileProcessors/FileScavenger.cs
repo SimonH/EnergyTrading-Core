@@ -88,7 +88,7 @@
             // TODO: Look at GetLastAccessTime since it might be stale
             var fileCount = 0;
             var movedCount = 0;
-            foreach (var s in Directory.EnumerateFiles(enumeratePath, "*.*", option).Where(x => File.GetLastAccessTimeUtc(x) < (DateTime.UtcNow - this.endpoint.RecoveryInterval)))
+            foreach (var s in Directory.EnumerateFiles(enumeratePath, "*.*", option).Where(x => { var info = new FileInfo(x); info.Refresh(); return info.LastAccessTimeUtc < (DateTime.UtcNow - this.endpoint.RecoveryInterval); } ))
             {
                 ++fileCount;
                 Logger.DebugFormat("Scavenger looking at {0}", s);

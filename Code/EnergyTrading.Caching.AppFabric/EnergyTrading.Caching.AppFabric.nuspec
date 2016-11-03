@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.Caching.AppFabric</id>
         <title>SH.EnergyTrading.Caching.AppFabric</title>        
         <description>EnergyTrading distributed cache support classes specifically for AppFabric</description>
-        <version>1.0.34</version>
+        <version>1.0.35</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <authors>SimonH</authors>

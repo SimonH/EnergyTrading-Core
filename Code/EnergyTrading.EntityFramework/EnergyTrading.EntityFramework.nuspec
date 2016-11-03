@@ -4,7 +4,7 @@
         <id>SH.EnergyTrading.EntityFramework</id>
         <title>SH.EnergyTrading.EntityFramework</title>
         <description>EnergyTrading helpers and extensions for Entity Framework.</description>
-        <version>1.0.34</version>
+        <version>1.0.35</version>
         <releaseNotes>none</releaseNotes>
         <copyright>Copyright RWE 2014</copyright>
         <authors>SimonH</authors>
