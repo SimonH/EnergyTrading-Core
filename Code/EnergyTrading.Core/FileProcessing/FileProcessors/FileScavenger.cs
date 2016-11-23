@@ -131,6 +131,7 @@
             if (this.sufferedNetworkError || (fileCount > 0 && movedCount == fileCount))
             {
                 this.FireRestartEvent();
+                sufferedNetworkError = false;
             }
         }
 
