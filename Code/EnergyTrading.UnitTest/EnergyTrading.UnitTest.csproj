@@ -160,6 +160,7 @@
     <Compile Include="Configuration\SectionFixture.cs" />
     <Compile Include="Configuration\WcfServiceConfigurationSectionFixture.cs" />
     <Compile Include="Console\CommandLineParserFixture.cs" />
+    <Compile Include="Container\StaticUnityResolverFixture.cs" />
     <Compile Include="Container\Unity\ContainerFixture.cs" />
     <Compile Include="Container\Unity\ITestFactory.cs" />
     <Compile Include="Container\Unity\NexusServiceLocatorAdapterFixture.cs" />

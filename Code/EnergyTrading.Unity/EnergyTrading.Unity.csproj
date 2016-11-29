@@ -74,6 +74,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Caching\CacheRegistrarExtensions.cs" />
+    <Compile Include="Container\StaticUnityResolverBase.cs" />
     <Compile Include="Container\Unity\AutoRegistration\AutoRegistration.cs" />
     <Compile Include="Container\Unity\AutoRegistration\AutoRegistrationExtensions.cs" />
     <Compile Include="Container\Unity\AutoRegistration\IAutoRegistration.cs" />
