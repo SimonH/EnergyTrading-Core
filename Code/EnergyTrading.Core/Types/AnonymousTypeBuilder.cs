@@ -33,6 +33,11 @@ namespace EnergyTrading.Types
 
         public static object FromDictionary(IDictionary<string, object> properties)
         {
+            return FromEnumerable(properties);
+        }
+
+        public static object FromEnumerable(IEnumerable<KeyValuePair<string, object>> properties)
+        {
             var wrapper = AnonymousTypeBuilder.DefineType();
             foreach (var pair in properties)
             {
@@ -40,6 +45,11 @@ namespace EnergyTrading.Types
                 wrapper.WithProperty(pair.Key, type, pair.Value);
             }
             return wrapper.Instance();
+        }
+
+        public static object FromPairs(params KeyValuePair<string, object>[] pairs)
+        {
+            return FromEnumerable(pairs);
         }
     }
 }
