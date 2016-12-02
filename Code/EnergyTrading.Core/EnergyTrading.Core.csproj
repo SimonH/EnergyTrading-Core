@@ -242,6 +242,9 @@
     <Compile Include="Services\IRunningState.cs" />
     <Compile Include="Services\RunningState.cs" />
     <Compile Include="Threading\TaskExtensions.cs" />
+    <Compile Include="Types\AnonymousTypeBuilder.cs" />
+    <Compile Include="Types\AnonymousTypeParser.cs" />
+    <Compile Include="Types\TypeBuilderWrapper.cs" />
     <Compile Include="Validation\AndRule.cs" />
     <Compile Include="Validation\BooleanRule.cs" />
     <Compile Include="Validation\ChildRuleChecker.cs" />

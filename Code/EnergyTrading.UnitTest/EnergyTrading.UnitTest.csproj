@@ -321,6 +321,8 @@
     <Compile Include="SimpleData\NullExtensionsFixture.cs" />
     <Compile Include="SimpleData\SimpleDataRepositoryFixture.cs" />
     <Compile Include="Threading\TaskExtensionsFixture.cs" />
+    <Compile Include="Types\AnonymousTypeBuilderFixture.cs" />
+    <Compile Include="Types\AnonymousTypeParserFixture.cs" />
     <Compile Include="Validation\AndRuleFixture.cs" />
     <Compile Include="Validation\BooleanRuleFixture.cs" />
     <Compile Include="Validation\ChildRuleCheckerFixture.cs" />
