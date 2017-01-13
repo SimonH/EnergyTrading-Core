@@ -97,6 +97,7 @@
     <Compile Include="Conversion\IConvertTo.cs" />
     <Compile Include="CoreConstants.cs" />
     <Compile Include="Crypto\CryptoStringExtensions.cs" />
+    <Compile Include="Data\DataConversionExtensions.cs" />
     <Compile Include="Data\InvalidColumnException.cs" />
     <Compile Include="Data\Linq\DynamicLibrary.cs" />
     <Compile Include="Data\MappingException.cs" />

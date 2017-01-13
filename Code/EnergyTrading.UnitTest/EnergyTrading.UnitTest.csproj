@@ -193,6 +193,7 @@
     <Compile Include="Container\Unity\TypeTrackingExtensionFixture.cs" />
     <Compile Include="Container\Unity\UnityExtensionsFixture.cs" />
     <Compile Include="crypto\CryptoStringEtensionTests.cs" />
+    <Compile Include="Data\DataConversionExtensionsFixture.cs" />
     <Compile Include="Data\DbSetExtensionsFixture.cs" />
     <Compile Include="Data\QueryFactoryTests.cs" />
     <Compile Include="DateRangeFixture.cs" />
