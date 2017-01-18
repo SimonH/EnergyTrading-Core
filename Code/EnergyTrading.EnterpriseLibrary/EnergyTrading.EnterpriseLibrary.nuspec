@@ -4,7 +4,7 @@
     <id>SH.EnergyTrading.EnterpriseLibrary</id>
     <title>SH.EnergyTrading.EnterpriseLibrary</title>
     <description>Enterprises Library implementations of EnergyTrading interfaces</description>
-    <version>1.0.40</version>
+    <version>1.0.41</version>
     <releaseNotes>Newly created</releaseNotes>
     <copyright>Copyright RWE 2014</copyright>
     <authors>SimonH</authors>

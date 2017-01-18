@@ -173,7 +173,7 @@
             this.database = null;
         }
 
-        private AdoAdapter GetAdapter()
+        protected AdoAdapter GetAdapter()
         {
             return this.Database.GetAdapter() as AdoAdapter;
         }
