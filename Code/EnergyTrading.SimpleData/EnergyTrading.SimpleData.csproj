@@ -59,8 +59,10 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="DbExtensions.cs" />
     <Compile Include="InMemoryAdapterWithProcedures.cs" />
     <Compile Include="IRepository.Generic.cs" />
+    <Compile Include="IUseRawSql.cs" />
     <Compile Include="MultiPartDataProcess.cs" />
     <Compile Include="NullExtensions.cs" />
     <Compile Include="SimpleDataLoggerExtensions.cs" />
@@ -71,6 +73,8 @@
     <Compile Include="SimpleDataMode.cs" />
     <Compile Include="SimpleDataRepository.cs" />
     <Compile Include="SimpleDataDatabaseProvider.cs" />
+    <Compile Include="UseRawSql.cs" />
+    <Compile Include="UseRawSqlMock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EnergyTrading.SimpleData.nuspec">

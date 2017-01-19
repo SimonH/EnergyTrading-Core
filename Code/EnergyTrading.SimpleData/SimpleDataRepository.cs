@@ -84,6 +84,13 @@
 
         private int MaxRetries { get; set; }
 
+        private IUseRawSql useRawSql;
+        protected IUseRawSql UseRawSql
+        {
+            get { return useRawSql ?? new UseRawSql(); }
+            set { useRawSql = value; }
+        }
+
         protected SimpleDataMode Mode { get; set; }
 
         protected dynamic GetSchemaObject()
@@ -141,6 +148,7 @@
                         if (connection != null)
                         {
                             this.GetAdapter().UseSharedConnection(connection);
+                            UseRawSql.SetCurrentConnection(connection);
                         }
                         try
                         {
@@ -150,6 +158,7 @@
                         {
                             if (connection != null)
                             {
+                                UseRawSql.SetCurrentConnection(null);
                                 this.GetAdapter().StopUsingSharedConnection();
                                 connection.Close();
                             }
@@ -173,7 +182,7 @@
             this.database = null;
         }
 
-        protected AdoAdapter GetAdapter()
+        private AdoAdapter GetAdapter()
         {
             return this.Database.GetAdapter() as AdoAdapter;
         }
